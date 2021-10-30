@@ -1,0 +1,543 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		847A5B9F272D6263007FAC53 /* MapWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5B9E272D6263007FAC53 /* MapWrapper.swift */; };
+		847A5BA2272D6340007FAC53 /* MapLocationPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BA1272D6340007FAC53 /* MapLocationPoints.swift */; };
+		847A5BA7272D8301007FAC53 /* MapWrapperWithCoreLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BA6272D8301007FAC53 /* MapWrapperWithCoreLocation.swift */; };
+		847A5BA9272D8559007FAC53 /* MapLocationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BA8272D8559007FAC53 /* MapLocationAnnotationView.swift */; };
+		847A5BAD272DB895007FAC53 /* HomeMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BAC272DB895007FAC53 /* HomeMainView.swift */; };
+		847A5BAF272DB9F2007FAC53 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BAE272DB9F2007FAC53 /* HomeHeaderView.swift */; };
+		847A5BB1272DBCD9007FAC53 /* HomeHUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BB0272DBCD9007FAC53 /* HomeHUDView.swift */; };
+		847A5BB4272DC951007FAC53 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 847A5BB3272DC951007FAC53 /* Realm */; };
+		847A5BB6272DC951007FAC53 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 847A5BB5272DC951007FAC53 /* RealmSwift */; };
+		847A5BBA272DCACB007FAC53 /* RealmMapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BB9272DCACB007FAC53 /* RealmMapLocation.swift */; };
+		847A5BBC272DCD06007FAC53 /* RealmWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BBB272DCD06007FAC53 /* RealmWrapper.swift */; };
+		847A5BBE272DDEA3007FAC53 /* RealmLandmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BBD272DDEA3007FAC53 /* RealmLandmark.swift */; };
+		847A5BC0272DDEB6007FAC53 /* RealmRestaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BBF272DDEB6007FAC53 /* RealmRestaurant.swift */; };
+		84CA42E6272C2E1F0088FCDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA42E5272C2E1F0088FCDF /* AppDelegate.swift */; };
+		84CA42E8272C2E1F0088FCDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA42E7272C2E1F0088FCDF /* SceneDelegate.swift */; };
+		84CA42EA272C2E1F0088FCDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA42E9272C2E1F0088FCDF /* ViewController.swift */; };
+		84CA42EF272C2E200088FCDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CA42EE272C2E200088FCDF /* Assets.xcassets */; };
+		84CA4301272C33D00088FCDF /* DefaultARScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA4300272C33D00088FCDF /* DefaultARScene.swift */; };
+		84CA4304272C36780088FCDF /* SKSceneDefaultNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA4303272C36780088FCDF /* SKSceneDefaultNode.swift */; };
+		84CA4307272C36ED0088FCDF /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA4306272C36ED0088FCDF /* Landmark.swift */; };
+		84CA4309272C385E0088FCDF /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA4308272C385E0088FCDF /* Debug.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		847A5B9E272D6263007FAC53 /* MapWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWrapper.swift; sourceTree = "<group>"; };
+		847A5BA1272D6340007FAC53 /* MapLocationPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationPoints.swift; sourceTree = "<group>"; };
+		847A5BA6272D8301007FAC53 /* MapWrapperWithCoreLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWrapperWithCoreLocation.swift; sourceTree = "<group>"; };
+		847A5BA8272D8559007FAC53 /* MapLocationAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationAnnotationView.swift; sourceTree = "<group>"; };
+		847A5BAC272DB895007FAC53 /* HomeMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainView.swift; sourceTree = "<group>"; };
+		847A5BAE272DB9F2007FAC53 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		847A5BB0272DBCD9007FAC53 /* HomeHUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHUDView.swift; sourceTree = "<group>"; };
+		847A5BB9272DCACB007FAC53 /* RealmMapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMapLocation.swift; sourceTree = "<group>"; };
+		847A5BBB272DCD06007FAC53 /* RealmWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmWrapper.swift; sourceTree = "<group>"; };
+		847A5BBD272DDEA3007FAC53 /* RealmLandmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmLandmark.swift; sourceTree = "<group>"; };
+		847A5BBF272DDEB6007FAC53 /* RealmRestaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRestaurant.swift; sourceTree = "<group>"; };
+		84CA42E2272C2E1F0088FCDF /* Travel Travnik AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel Travnik AR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84CA42E5272C2E1F0088FCDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84CA42E7272C2E1F0088FCDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		84CA42E9272C2E1F0088FCDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84CA42EE272C2E200088FCDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84CA42F3272C2E200088FCDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84CA4300272C33D00088FCDF /* DefaultARScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultARScene.swift; sourceTree = "<group>"; };
+		84CA4303272C36780088FCDF /* SKSceneDefaultNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKSceneDefaultNode.swift; sourceTree = "<group>"; };
+		84CA4306272C36ED0088FCDF /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
+		84CA4308272C385E0088FCDF /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84CA42DF272C2E1F0088FCDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				847A5BB6272DC951007FAC53 /* RealmSwift in Frameworks */,
+				847A5BB4272DC951007FAC53 /* Realm in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		847A5B9D272D6206007FAC53 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				847A5B9E272D6263007FAC53 /* MapWrapper.swift */,
+				847A5BA6272D8301007FAC53 /* MapWrapperWithCoreLocation.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		847A5BA0272D632B007FAC53 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				847A5BA1272D6340007FAC53 /* MapLocationPoints.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		847A5BAA272D8581007FAC53 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				847A5BA8272D8559007FAC53 /* MapLocationAnnotationView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		847A5BAB272DB847007FAC53 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				847A5BAC272DB895007FAC53 /* HomeMainView.swift */,
+				847A5BAE272DB9F2007FAC53 /* HomeHeaderView.swift */,
+				847A5BB0272DBCD9007FAC53 /* HomeHUDView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		847A5BB7272DCA92007FAC53 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				847A5BB8272DCAA5007FAC53 /* Models */,
+				847A5BBB272DCD06007FAC53 /* RealmWrapper.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		847A5BB8272DCAA5007FAC53 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				847A5BB9272DCACB007FAC53 /* RealmMapLocation.swift */,
+				847A5BBD272DDEA3007FAC53 /* RealmLandmark.swift */,
+				847A5BBF272DDEB6007FAC53 /* RealmRestaurant.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		84CA42D9272C2E1F0088FCDF = {
+			isa = PBXGroup;
+			children = (
+				84CA42E4272C2E1F0088FCDF /* Travel Travnik AR */,
+				84CA42E3272C2E1F0088FCDF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84CA42E3272C2E1F0088FCDF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84CA42E2272C2E1F0088FCDF /* Travel Travnik AR.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84CA42E4272C2E1F0088FCDF /* Travel Travnik AR */ = {
+			isa = PBXGroup;
+			children = (
+				847A5BB7272DCA92007FAC53 /* Realm */,
+				84CA42FD272C338D0088FCDF /* UI */,
+				84CA42FC272C33810088FCDF /* Helpers */,
+				84CA42FB272C33740088FCDF /* Models */,
+				84CA42FA272C336E0088FCDF /* ViewModels */,
+				84CA42F9272C33620088FCDF /* Controllers */,
+				84CA42E5272C2E1F0088FCDF /* AppDelegate.swift */,
+				84CA42E7272C2E1F0088FCDF /* SceneDelegate.swift */,
+				84CA42E9272C2E1F0088FCDF /* ViewController.swift */,
+				84CA42EE272C2E200088FCDF /* Assets.xcassets */,
+				84CA42F3272C2E200088FCDF /* Info.plist */,
+			);
+			path = "Travel Travnik AR";
+			sourceTree = "<group>";
+		};
+		84CA42F9272C33620088FCDF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		84CA42FA272C336E0088FCDF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		84CA42FB272C33740088FCDF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				847A5BA0272D632B007FAC53 /* Map */,
+				84CA4302272C365D0088FCDF /* AR */,
+				84CA4306272C36ED0088FCDF /* Landmark.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		84CA42FC272C33810088FCDF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				847A5B9D272D6206007FAC53 /* Map */,
+				84CA42FF272C33BC0088FCDF /* Global */,
+				84CA42FE272C33AB0088FCDF /* Augmented Reality  */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		84CA42FD272C338D0088FCDF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				847A5BAB272DB847007FAC53 /* Home */,
+				847A5BAA272D8581007FAC53 /* Map */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		84CA42FE272C33AB0088FCDF /* Augmented Reality  */ = {
+			isa = PBXGroup;
+			children = (
+				84CA4300272C33D00088FCDF /* DefaultARScene.swift */,
+			);
+			path = "Augmented Reality ";
+			sourceTree = "<group>";
+		};
+		84CA42FF272C33BC0088FCDF /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				84CA4308272C385E0088FCDF /* Debug.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		84CA4302272C365D0088FCDF /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				84CA4303272C36780088FCDF /* SKSceneDefaultNode.swift */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84CA42E1272C2E1F0088FCDF /* Travel Travnik AR */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84CA42F6272C2E200088FCDF /* Build configuration list for PBXNativeTarget "Travel Travnik AR" */;
+			buildPhases = (
+				84CA42DE272C2E1F0088FCDF /* Sources */,
+				84CA42DF272C2E1F0088FCDF /* Frameworks */,
+				84CA42E0272C2E1F0088FCDF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Travel Travnik AR";
+			packageProductDependencies = (
+				847A5BB3272DC951007FAC53 /* Realm */,
+				847A5BB5272DC951007FAC53 /* RealmSwift */,
+			);
+			productName = "Travel Travnik AR";
+			productReference = 84CA42E2272C2E1F0088FCDF /* Travel Travnik AR.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84CA42DA272C2E1F0088FCDF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					84CA42E1272C2E1F0088FCDF = {
+						CreatedOnToolsVersion = 13.0;
+					};
+				};
+			};
+			buildConfigurationList = 84CA42DD272C2E1F0088FCDF /* Build configuration list for PBXProject "Travel Travnik AR" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84CA42D9272C2E1F0088FCDF;
+			packageReferences = (
+				847A5BB2272DC951007FAC53 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
+			productRefGroup = 84CA42E3272C2E1F0088FCDF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84CA42E1272C2E1F0088FCDF /* Travel Travnik AR */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84CA42E0272C2E1F0088FCDF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84CA42EF272C2E200088FCDF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84CA42DE272C2E1F0088FCDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				847A5BA7272D8301007FAC53 /* MapWrapperWithCoreLocation.swift in Sources */,
+				84CA42EA272C2E1F0088FCDF /* ViewController.swift in Sources */,
+				847A5BAF272DB9F2007FAC53 /* HomeHeaderView.swift in Sources */,
+				84CA4301272C33D00088FCDF /* DefaultARScene.swift in Sources */,
+				847A5B9F272D6263007FAC53 /* MapWrapper.swift in Sources */,
+				84CA42E6272C2E1F0088FCDF /* AppDelegate.swift in Sources */,
+				847A5BC0272DDEB6007FAC53 /* RealmRestaurant.swift in Sources */,
+				847A5BA9272D8559007FAC53 /* MapLocationAnnotationView.swift in Sources */,
+				847A5BBA272DCACB007FAC53 /* RealmMapLocation.swift in Sources */,
+				847A5BB1272DBCD9007FAC53 /* HomeHUDView.swift in Sources */,
+				847A5BAD272DB895007FAC53 /* HomeMainView.swift in Sources */,
+				847A5BBE272DDEA3007FAC53 /* RealmLandmark.swift in Sources */,
+				847A5BA2272D6340007FAC53 /* MapLocationPoints.swift in Sources */,
+				84CA4304272C36780088FCDF /* SKSceneDefaultNode.swift in Sources */,
+				84CA42E8272C2E1F0088FCDF /* SceneDelegate.swift in Sources */,
+				84CA4309272C385E0088FCDF /* Debug.swift in Sources */,
+				84CA4307272C36ED0088FCDF /* Landmark.swift in Sources */,
+				847A5BBC272DCD06007FAC53 /* RealmWrapper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		84CA42F4272C2E200088FCDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84CA42F5272C2E200088FCDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84CA42F7272C2E200088FCDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CVFGP5ZHT7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Travel Travnik AR/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cc.nedim.ios.Travel-Travnik-AR";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84CA42F8272C2E200088FCDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CVFGP5ZHT7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Travel Travnik AR/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cc.nedim.ios.Travel-Travnik-AR";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84CA42DD272C2E1F0088FCDF /* Build configuration list for PBXProject "Travel Travnik AR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84CA42F4272C2E200088FCDF /* Debug */,
+				84CA42F5272C2E200088FCDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84CA42F6272C2E200088FCDF /* Build configuration list for PBXNativeTarget "Travel Travnik AR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84CA42F7272C2E200088FCDF /* Debug */,
+				84CA42F8272C2E200088FCDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		847A5BB2272DC951007FAC53 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		847A5BB3272DC951007FAC53 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 847A5BB2272DC951007FAC53 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		847A5BB5272DC951007FAC53 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 847A5BB2272DC951007FAC53 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 84CA42DA272C2E1F0088FCDF /* Project object */;
+}
