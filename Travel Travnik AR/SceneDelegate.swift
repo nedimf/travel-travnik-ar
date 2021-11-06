@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //Simple statement that enables us to use programatic layout
         //RootViewController is default controller from which navigation begins
         let window = UIWindow(windowScene: windowScene)
-        nc = UINavigationController(rootViewController: ViewController())
+        nc = UINavigationController(rootViewController: HomeViewController())
         window.rootViewController = nc
         window.makeKeyAndVisible()
         self.window = window

@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		846EB16727371B0B00D10D1A /* LandmarkHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846EB16627371B0B00D10D1A /* LandmarkHostView.swift */; };
+		846EB16927371B5E00D10D1A /* LandmarkRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846EB16827371B5E00D10D1A /* LandmarkRowView.swift */; };
+		846EB16B27371B7700D10D1A /* LandmarkDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846EB16A27371B7700D10D1A /* LandmarkDetailedView.swift */; };
+		846EB16E27371C2200D10D1A /* CirclePhotoLandmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846EB16D27371C2200D10D1A /* CirclePhotoLandmarkView.swift */; };
+		846EB17027371C6600D10D1A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846EB16F27371C6600D10D1A /* MapView.swift */; };
+		846EB17327371F1900D10D1A /* RestaurantRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846EB17227371F1900D10D1A /* RestaurantRowView.swift */; };
+		846EB17527371F9B00D10D1A /* RestaurantHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846EB17427371F9B00D10D1A /* RestaurantHostView.swift */; };
+		846EB17727371FD200D10D1A /* RestaurantDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846EB17627371FD200D10D1A /* RestaurantDetailedView.swift */; };
+		846EB1792737201C00D10D1A /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846EB1782737201C00D10D1A /* Restaurant.swift */; };
+		846EB17B273722C500D10D1A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846EB17A273722C500D10D1A /* HomeViewController.swift */; };
+		846EB17D2737261900D10D1A /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846EB17C2737261900D10D1A /* ARViewController.swift */; };
+		846EB1802737290600D10D1A /* landmarks.json in Resources */ = {isa = PBXBuildFile; fileRef = 846EB17F2737290600D10D1A /* landmarks.json */; };
+		846EB1822737334400D10D1A /* maplocation.json in Resources */ = {isa = PBXBuildFile; fileRef = 846EB1812737334400D10D1A /* maplocation.json */; };
+		846EB184273734E000D10D1A /* parking.json in Resources */ = {isa = PBXBuildFile; fileRef = 846EB183273734E000D10D1A /* parking.json */; };
+		846EB1862737357000D10D1A /* restaurants.json in Resources */ = {isa = PBXBuildFile; fileRef = 846EB1852737357000D10D1A /* restaurants.json */; };
+		846EB1882737363900D10D1A /* ReadJSONFromBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846EB1872737363900D10D1A /* ReadJSONFromBundle.swift */; };
+		846EB18A273736AE00D10D1A /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846EB189273736AE00D10D1A /* MapLocation.swift */; };
 		847A5B9F272D6263007FAC53 /* MapWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5B9E272D6263007FAC53 /* MapWrapper.swift */; };
 		847A5BA2272D6340007FAC53 /* MapLocationPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BA1272D6340007FAC53 /* MapLocationPoints.swift */; };
 		847A5BA7272D8301007FAC53 /* MapWrapperWithCoreLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BA6272D8301007FAC53 /* MapWrapperWithCoreLocation.swift */; };
@@ -31,6 +48,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		846EB16627371B0B00D10D1A /* LandmarkHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkHostView.swift; sourceTree = "<group>"; };
+		846EB16827371B5E00D10D1A /* LandmarkRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkRowView.swift; sourceTree = "<group>"; };
+		846EB16A27371B7700D10D1A /* LandmarkDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetailedView.swift; sourceTree = "<group>"; };
+		846EB16D27371C2200D10D1A /* CirclePhotoLandmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePhotoLandmarkView.swift; sourceTree = "<group>"; };
+		846EB16F27371C6600D10D1A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		846EB17227371F1900D10D1A /* RestaurantRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantRowView.swift; sourceTree = "<group>"; };
+		846EB17427371F9B00D10D1A /* RestaurantHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantHostView.swift; sourceTree = "<group>"; };
+		846EB17627371FD200D10D1A /* RestaurantDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailedView.swift; sourceTree = "<group>"; };
+		846EB1782737201C00D10D1A /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		846EB17A273722C500D10D1A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		846EB17C2737261900D10D1A /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		846EB17F2737290600D10D1A /* landmarks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = landmarks.json; sourceTree = "<group>"; };
+		846EB1812737334400D10D1A /* maplocation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = maplocation.json; sourceTree = "<group>"; };
+		846EB183273734E000D10D1A /* parking.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = parking.json; sourceTree = "<group>"; };
+		846EB1852737357000D10D1A /* restaurants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = restaurants.json; sourceTree = "<group>"; };
+		846EB1872737363900D10D1A /* ReadJSONFromBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadJSONFromBundle.swift; sourceTree = "<group>"; };
+		846EB189273736AE00D10D1A /* MapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
 		847A5B9E272D6263007FAC53 /* MapWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWrapper.swift; sourceTree = "<group>"; };
 		847A5BA1272D6340007FAC53 /* MapLocationPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationPoints.swift; sourceTree = "<group>"; };
 		847A5BA6272D8301007FAC53 /* MapWrapperWithCoreLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWrapperWithCoreLocation.swift; sourceTree = "<group>"; };
@@ -67,6 +101,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		846EB16527371AF200D10D1A /* Landmark */ = {
+			isa = PBXGroup;
+			children = (
+				846EB16627371B0B00D10D1A /* LandmarkHostView.swift */,
+				846EB16827371B5E00D10D1A /* LandmarkRowView.swift */,
+				846EB16A27371B7700D10D1A /* LandmarkDetailedView.swift */,
+			);
+			path = Landmark;
+			sourceTree = "<group>";
+		};
+		846EB16C27371BFD00D10D1A /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				846EB16D27371C2200D10D1A /* CirclePhotoLandmarkView.swift */,
+				846EB16F27371C6600D10D1A /* MapView.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		846EB17127371DFA00D10D1A /* Restaurants */ = {
+			isa = PBXGroup;
+			children = (
+				846EB17227371F1900D10D1A /* RestaurantRowView.swift */,
+				846EB17427371F9B00D10D1A /* RestaurantHostView.swift */,
+				846EB17627371FD200D10D1A /* RestaurantDetailedView.swift */,
+			);
+			path = Restaurants;
+			sourceTree = "<group>";
+		};
+		846EB17E273728D900D10D1A /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				846EB17F2737290600D10D1A /* landmarks.json */,
+				846EB1812737334400D10D1A /* maplocation.json */,
+				846EB183273734E000D10D1A /* parking.json */,
+				846EB1852737357000D10D1A /* restaurants.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		847A5B9D272D6206007FAC53 /* Map */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +232,8 @@
 		84CA42F9272C33620088FCDF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				846EB17A273722C500D10D1A /* HomeViewController.swift */,
+				846EB17C2737261900D10D1A /* ARViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -175,6 +251,8 @@
 				847A5BA0272D632B007FAC53 /* Map */,
 				84CA4302272C365D0088FCDF /* AR */,
 				84CA4306272C36ED0088FCDF /* Landmark.swift */,
+				846EB1782737201C00D10D1A /* Restaurant.swift */,
+				846EB189273736AE00D10D1A /* MapLocation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,6 +260,7 @@
 		84CA42FC272C33810088FCDF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				846EB17E273728D900D10D1A /* JSON */,
 				847A5B9D272D6206007FAC53 /* Map */,
 				84CA42FF272C33BC0088FCDF /* Global */,
 				84CA42FE272C33AB0088FCDF /* Augmented Reality  */,
@@ -192,6 +271,9 @@
 		84CA42FD272C338D0088FCDF /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				846EB17127371DFA00D10D1A /* Restaurants */,
+				846EB16C27371BFD00D10D1A /* Global */,
+				846EB16527371AF200D10D1A /* Landmark */,
 				847A5BAB272DB847007FAC53 /* Home */,
 				847A5BAA272D8581007FAC53 /* Map */,
 			);
@@ -210,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				84CA4308272C385E0088FCDF /* Debug.swift */,
+				846EB1872737363900D10D1A /* ReadJSONFromBundle.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -287,7 +370,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846EB184273734E000D10D1A /* parking.json in Resources */,
+				846EB1862737357000D10D1A /* restaurants.json in Resources */,
+				846EB1822737334400D10D1A /* maplocation.json in Resources */,
 				84CA42EF272C2E200088FCDF /* Assets.xcassets in Resources */,
+				846EB1802737290600D10D1A /* landmarks.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,23 +386,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				847A5BA7272D8301007FAC53 /* MapWrapperWithCoreLocation.swift in Sources */,
+				846EB16927371B5E00D10D1A /* LandmarkRowView.swift in Sources */,
 				84CA42EA272C2E1F0088FCDF /* ViewController.swift in Sources */,
 				847A5BAF272DB9F2007FAC53 /* HomeHeaderView.swift in Sources */,
+				846EB16727371B0B00D10D1A /* LandmarkHostView.swift in Sources */,
+				846EB16E27371C2200D10D1A /* CirclePhotoLandmarkView.swift in Sources */,
+				846EB16B27371B7700D10D1A /* LandmarkDetailedView.swift in Sources */,
 				84CA4301272C33D00088FCDF /* DefaultARScene.swift in Sources */,
 				847A5B9F272D6263007FAC53 /* MapWrapper.swift in Sources */,
+				846EB17027371C6600D10D1A /* MapView.swift in Sources */,
 				84CA42E6272C2E1F0088FCDF /* AppDelegate.swift in Sources */,
 				847A5BC0272DDEB6007FAC53 /* RealmRestaurant.swift in Sources */,
+				846EB17527371F9B00D10D1A /* RestaurantHostView.swift in Sources */,
+				846EB18A273736AE00D10D1A /* MapLocation.swift in Sources */,
+				846EB1882737363900D10D1A /* ReadJSONFromBundle.swift in Sources */,
 				847A5BA9272D8559007FAC53 /* MapLocationAnnotationView.swift in Sources */,
 				847A5BBA272DCACB007FAC53 /* RealmMapLocation.swift in Sources */,
 				847A5BB1272DBCD9007FAC53 /* HomeHUDView.swift in Sources */,
 				847A5BAD272DB895007FAC53 /* HomeMainView.swift in Sources */,
 				847A5BBE272DDEA3007FAC53 /* RealmLandmark.swift in Sources */,
 				847A5BA2272D6340007FAC53 /* MapLocationPoints.swift in Sources */,
+				846EB17B273722C500D10D1A /* HomeViewController.swift in Sources */,
 				84CA4304272C36780088FCDF /* SKSceneDefaultNode.swift in Sources */,
 				84CA42E8272C2E1F0088FCDF /* SceneDelegate.swift in Sources */,
 				84CA4309272C385E0088FCDF /* Debug.swift in Sources */,
 				84CA4307272C36ED0088FCDF /* Landmark.swift in Sources */,
+				846EB17727371FD200D10D1A /* RestaurantDetailedView.swift in Sources */,
+				846EB17327371F1900D10D1A /* RestaurantRowView.swift in Sources */,
+				846EB17D2737261900D10D1A /* ARViewController.swift in Sources */,
 				847A5BBC272DCD06007FAC53 /* RealmWrapper.swift in Sources */,
+				846EB1792737201C00D10D1A /* Restaurant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

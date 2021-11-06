@@ -14,20 +14,20 @@ import SwiftUI
 // HomeMainView we can observe as host view for HomeViewController that contains of headerView and bodyView and navigationView
 class HomeMainView: UIView{
     
-    let headerView: HomeHeaderView = {
+    var headerView: HomeHeaderView = {
         let headerView = HomeHeaderView()
         headerView.translatesAutoresizingMaskIntoConstraints = false
         return headerView
     }()
 
-    let mapView: MKMapView = {
+    var mapView: MKMapView = {
         let mapView = MKMapView()
         mapView.translatesAutoresizingMaskIntoConstraints = false
         
         return mapView
     }()
         
-    let hudViewHC: UIHostingController<HomeHUDView> = {
+    var hudViewHC: UIHostingController<HomeHUDView> = {
         let viewHC = UIHostingController(rootView: HomeHUDView())
         viewHC.view!.backgroundColor = .black.withAlphaComponent(0.1)
         viewHC.view!.translatesAutoresizingMaskIntoConstraints = false
@@ -68,6 +68,8 @@ class HomeMainView: UIView{
             hudViewHC.view.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor),
             hudViewHC.view.heightAnchor.constraint(equalToConstant: 70),
         ])
+        
+     
     }
 }
 
