@@ -31,7 +31,7 @@ extension HomeViewController: HUDClickedDelegate{
         
         let landmarksHostVC = UIHostingController(rootView: LandmarkHostView())
         let restaurantHostVC = UIHostingController(rootView: RestaurantHostView())
-        //let startTourVC =
+        let startTourVC = GPSViewController()
         //let arController =
         
         let scene = UIApplication.shared.connectedScenes.first
@@ -39,7 +39,7 @@ extension HomeViewController: HUDClickedDelegate{
         case 0:
             if let sd : SceneDelegate = (scene?.delegate as? SceneDelegate) {
                 //locationManager.stopUpdatingLocation()
-                //sd.nc.pushViewController(arController, animated: true)
+                sd.nc.pushViewController(startTourVC, animated: true)
             }
         case 1:
             if let sd : SceneDelegate = (scene?.delegate as? SceneDelegate) {

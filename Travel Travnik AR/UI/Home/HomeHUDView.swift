@@ -49,7 +49,9 @@ struct HomeHUDView: View {
                                 .fill(Color.white)
                                 .frame(width: 200, height: 40)
                             HStack{
-                                Image(systemName: "hands.sparkles.fill")
+                                Image("icons/restaurant")
+                                    .resizable()
+                                    .frame(width: 25, height: 25)
                                 Text("RESTAURANTS")
                                 
                             }

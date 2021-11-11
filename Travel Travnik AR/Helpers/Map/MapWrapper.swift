@@ -18,18 +18,21 @@ class MapWrapper: NSObject{
     var didClickOnAccessoryMapView: (CLLocationCoordinate2D) -> Void?
     var mapWrapperDelegate: MKMapViewDelegate?
     var view: UIView?
+    var debugView: UILabel?
     
     var currentPlace: CLLocation?
     var directions = [String]()
     var routeSteps = [MKRoute.Step]()
+    var debugCoordinatesArray = [String]()
     
     // Setting up region and showing it on Map View
     // Enable location to check for current coordinates
-    init(mapView: MKMapView, region: MKCoordinateRegion, locationManager: CLLocationManager,view: UIView?,didClickOnAccessoryMapView: @escaping (CLLocationCoordinate2D) -> Void?) {
+    init(mapView: MKMapView, region: MKCoordinateRegion, locationManager: CLLocationManager,view: UIView?, debugView: UILabel,didClickOnAccessoryMapView: @escaping (CLLocationCoordinate2D) -> Void?) {
         self.mapView =  mapView
         self.region = region
         self.locationManager = locationManager
         self.view  = view
+        self.debugView = debugView
         self.didClickOnAccessoryMapView = didClickOnAccessoryMapView
         super.init()
         self.mapView.delegate = self
@@ -175,6 +178,13 @@ extension MapWrapper: MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if let annotation = view.annotation {
             self.didClickOnAccessoryMapView(annotation.coordinate)
+            
+            let a = MapLocationPoints(title: "sss", locationName: nil, discipline: nil, image: nil, coordinate: annotation.coordinate)
+            let b = MapLocationPoints(title: "222", locationName: nil, discipline: nil, image: nil, coordinate: currentPlace!.coordinate)
+            
+            let route = setRouteOnMap(l1: b, l2: a, transportType: MKDirectionsTransportType.automobile)
+            
+            print(route)
         }
     }
 }

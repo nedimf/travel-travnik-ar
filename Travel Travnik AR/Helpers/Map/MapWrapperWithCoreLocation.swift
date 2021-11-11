@@ -26,6 +26,9 @@ extension MapWrapper: CLLocationManagerDelegate {
         print("locations = \(locValue.latitude) \(locValue.longitude)")
         self.currentPlace = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
         
+        
+        self.debugView?.text = "\(locValue.latitude) \(locValue.longitude)"
+        self.debugCoordinatesArray.append("\(locValue.latitude) \(locValue.longitude)")
         //Turn by turn navigation
         for route in self.routeSteps{
             if (CLLocation(latitude: route.polyline.coordinate.latitude, longitude: route.polyline.coordinate.longitude).distance(from: CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)) < 10){

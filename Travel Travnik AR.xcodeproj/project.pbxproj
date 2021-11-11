@@ -45,6 +45,7 @@
 		84CA4304272C36780088FCDF /* SKSceneDefaultNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA4303272C36780088FCDF /* SKSceneDefaultNode.swift */; };
 		84CA4307272C36ED0088FCDF /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA4306272C36ED0088FCDF /* Landmark.swift */; };
 		84CA4309272C385E0088FCDF /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA4308272C385E0088FCDF /* Debug.swift */; };
+		84D18537273D4C6100748C8A /* GPSTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D18536273D4C6100748C8A /* GPSTestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,8 @@
 		84CA4303272C36780088FCDF /* SKSceneDefaultNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKSceneDefaultNode.swift; sourceTree = "<group>"; };
 		84CA4306272C36ED0088FCDF /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
 		84CA4308272C385E0088FCDF /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
+		84D18536273D4C6100748C8A /* GPSTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSTestViewController.swift; sourceTree = "<group>"; };
+		84D18538273D9A4400748C8A /* mapstogpx20211015_222410.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = mapstogpx20211015_222410.gpx; path = ../../../../Downloads/mapstogpx20211015_222410.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +201,7 @@
 		84CA42D9272C2E1F0088FCDF = {
 			isa = PBXGroup;
 			children = (
+				84D18538273D9A4400748C8A /* mapstogpx20211015_222410.gpx */,
 				84CA42E4272C2E1F0088FCDF /* Travel Travnik AR */,
 				84CA42E3272C2E1F0088FCDF /* Products */,
 			);
@@ -234,6 +238,7 @@
 			children = (
 				846EB17A273722C500D10D1A /* HomeViewController.swift */,
 				846EB17C2737261900D10D1A /* ARViewController.swift */,
+				84D18536273D4C6100748C8A /* GPSTestViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -416,6 +421,7 @@
 				846EB17D2737261900D10D1A /* ARViewController.swift in Sources */,
 				847A5BBC272DCD06007FAC53 /* RealmWrapper.swift in Sources */,
 				846EB1792737201C00D10D1A /* Restaurant.swift in Sources */,
+				84D18537273D4C6100748C8A /* GPSTestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
