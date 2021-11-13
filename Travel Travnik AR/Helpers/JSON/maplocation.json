@@ -6,25 +6,25 @@
         "title":"Rodna kuca Nobelovca Ive Andrica",
         "locationName:":"Zenjak, Travnik",
         "discipline":"Sculpture",
-        "image":"locations/ivo-andric",
-        "latitude":"44.226518",
-        "longitude":"17.668044"
+        "image":"maplocations/rodna-kuca-ive-andrica/1",
+        "latitude":44.226518,
+        "longitude":17.668044
     },
     {
         "title":"Travnička Tvrđava",
         "locationName:":"Stari Grad",
         "discipline":"Sculpture",
-        "image":"locations/travnicka-tvrdjava",
-        "latitude":"44.22970",
-        "longitude":"17.67418"
+        "image":"maplocations/travnicka-tvrdjava/1",
+        "latitude":44.22970,
+        "longitude":17.67418
     },
     {
         "title":"Hari Ćevabdžinica",
         "locationName:":"Donja čaršija, Travni",
         "discipline":"Sculpture",
-        "image":"locations/hari-restaurant",
-        "latitude":"44.2267219",
-        "longitude":"17.6708389"
+        "image":"maplocations/hari-restoran/1",
+        "latitude":44.2267219,
+        "longitude":17.6708389
     },
 ]
 

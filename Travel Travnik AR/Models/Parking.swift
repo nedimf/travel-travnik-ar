@@ -1,12 +1,13 @@
 //
-//	MapLocation
+//	Parking
 //  Travel Travnik AR
-//	Created by: @nedimf on 06/11/2021
+//	Created by: @nedimf on 13/11/2021
 
 
 import Foundation
 
-struct MapLocation: Codable {
+// MARK: - ParkingElement
+struct ParkingElement: Codable {
     let title, locationName, discipline, image: String
     let latitude, longitude: Double
 
@@ -17,3 +18,4 @@ struct MapLocation: Codable {
     }
 }
 
+typealias Parking = [ParkingElement]

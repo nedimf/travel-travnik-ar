@@ -6,6 +6,7 @@
 
 import Foundation
 import CoreLocation
+import UIKit
 
 extension MapWrapper: CLLocationManagerDelegate {
     
@@ -30,11 +31,22 @@ extension MapWrapper: CLLocationManagerDelegate {
         self.debugView?.text = "\(locValue.latitude) \(locValue.longitude)"
         self.debugCoordinatesArray.append("\(locValue.latitude) \(locValue.longitude)")
         //Turn by turn navigation
+        print(routeSteps)
+        //self.view?.transparentView.isHidden = false
+
+        
         for route in self.routeSteps{
+            
+            print(CLLocation(latitude: route.polyline.coordinate.latitude, longitude: route.polyline.coordinate.longitude).distance(from: CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)))
+                                                                                                                                    
             if (CLLocation(latitude: route.polyline.coordinate.latitude, longitude: route.polyline.coordinate.longitude).distance(from: CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)) < 10){
-                //                self.topViewLabel.text = route.instructions
+                self.view?.topLabel.text = route.instructions
+
+                print(route.instructions)
                 
             }
+            
+            print(route.instructions)
         }
         
         guard let location: CLLocation = manager.location else { return }
@@ -45,15 +57,21 @@ extension MapWrapper: CLLocationManagerDelegate {
             let distance = CLLocation(latitude: 44.2257017, longitude: 17.6364189).distance(from: location)
             if distance < 100 {
                 if let name = name {
-                    //                        self.orangeView.backgroundColor = .orange.withAlphaComponent(0.3)
-                    //                        self.topViewLabel.text = "\(name), \(city)"
+                    if let view = self.view {
+                        view.transparentView.isHidden = false
+                        view.transparentView.backgroundColor = .orange.withAlphaComponent(0.3)
+                        view.topLabel.text = "\(name), \(city)"
+                    }
                 }
                 
             }else{
                 if let name = name {
-                    //                        self.orangeView.backgroundColor = .red.withAlphaComponent(0.3)
-                    //                        self.topViewLabel.font = UIFont.systemFont(ofSize: 14)
-                    //                        self.topViewLabel.text = "You are not in range: \(name), \(city)"
+                    if let view = self.view{
+                        view.transparentView.isHidden = false
+                        view.transparentView.backgroundColor = .red.withAlphaComponent(0.3)
+                        view.topLabel.font = UIFont.systemFont(ofSize: 14)
+                        view.topLabel.text = "You are not in range: \(name), \(city)"
+                    }
                 }
             }
             

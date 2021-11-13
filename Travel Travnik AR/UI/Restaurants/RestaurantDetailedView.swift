@@ -9,9 +9,15 @@ import MapKit
 
 struct RestaurantDetailedView: View {
     @State var restaurant: RestaurantElement
+    @State var mapWrapper: MapWrapper?=nil
+    @State var navigationSteps = [String]()
+    @State var openDirections = false
     
     var body: some View {
         ScrollView {
+            NavigationLink(destination: RouteStepsListView(steps: navigationSteps), isActive: $openDirections){
+                EmptyView()
+            }
             MapView(region: MKCoordinateRegion(
                 center: CLLocationCoordinate2D(latitude: restaurant.latitude, longitude: restaurant.longitude),
                 span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
@@ -51,7 +57,33 @@ struct RestaurantDetailedView: View {
         .toolbar{
             Image(systemName: "car.fill")
                 .onTapGesture {
-                    print("directions")
+                    
+                    if let mapWrapper = mapWrapper {
+                        
+                        let m1 = MapLocationPoints(title: "1", locationName: "1", discipline: "1", image: UIImage(systemName: "mappin.and.ellipse"), coordinate: CLLocationCoordinate2D(latitude: restaurant.latitude, longitude: restaurant.longitude))
+                        
+                        if let currentPlace = mapWrapper.currentPlace{
+                            
+                            let m2 = MapLocationPoints(title: "2", locationName: "2", discipline: "2", image: UIImage(systemName: "mappin.and.ellipse"), coordinate: currentPlace.coordinate)
+                            
+                            
+                            let route = mapWrapper.setRouteOnMap(l1: m1, l2: m2, transportType: .walking)
+                            
+                            if let route = route {
+                                
+                                for step in route.steps{
+                                    if (step.instructions != ""){
+                                        navigationSteps.append(step.instructions)
+                                    }
+                                }
+                                
+                                openDirections = true
+                        }
+                       
+                      
+                        }
+                    }
+                    
                 }
         }
         .navigationBarTitleDisplayMode(.automatic)

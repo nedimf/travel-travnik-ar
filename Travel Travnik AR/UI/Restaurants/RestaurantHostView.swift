@@ -13,12 +13,13 @@ struct RestaurantHostView: View {
     @State var openRandomRestaurant = false
     @State var randomNumber = 0
     @State var searchHint = ""
+    @State var mapWrapper: MapWrapper?=nil
     
     var body: some View {
         VStack{
             VStack(){
                 if let restaurants = restaurants {
-                    NavigationLink(destination: RestaurantDetailedView(restaurant: restaurants[randomNumber]), isActive: $openRandomRestaurant){
+                    NavigationLink(destination: RestaurantDetailedView(restaurant: restaurants[randomNumber], mapWrapper: mapWrapper), isActive: $openRandomRestaurant){
                         EmptyView()
                     }
                 }
@@ -30,7 +31,7 @@ struct RestaurantHostView: View {
                         .frame(width: UIScreen.main.bounds.width - 25, height: 50)
                     HStack{
                         Image(systemName: "magnifyingglass")
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Color(UIColor.Custom.black))
                         TextField(
                             searchHint,
                             text: $searchText,
@@ -60,9 +61,10 @@ struct RestaurantHostView: View {
                 LazyHStack {
                     if let restaurants = restaurants {
                         ForEach(restaurants, id: \.id) { restaurant in
-                            NavigationLink(destination: RestaurantDetailedView(restaurant: restaurant)) {
+                            NavigationLink(destination: RestaurantDetailedView(restaurant: restaurant, mapWrapper: mapWrapper)) {
                                 RestaurantRowView(restaurant: restaurant)
-                                    .foregroundColor(.black)
+                                    .foregroundColor(Color(UIColor.Custom.black))
+
                             }
                             .onAppear {
                                 print(restaurants)

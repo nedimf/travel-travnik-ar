@@ -31,5 +31,10 @@
     <string>Well..we need it</string>
     <key>NSPhotoLibraryUsageDescription</key>
     <string>Well it is what it </string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>instagram</string>
+        <string>fb</string>
+    </array>
 </dict>
 </plist>

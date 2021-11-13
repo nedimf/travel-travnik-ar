@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8405A4E8273FE12F005CEC0B /* TourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405A4E7273FE12F005CEC0B /* TourViewController.swift */; };
+		8405A4EA273FE7E7005CEC0B /* tour.json in Resources */ = {isa = PBXBuildFile; fileRef = 8405A4E9273FE7E7005CEC0B /* tour.json */; };
+		8405A4ED273FEF3B005CEC0B /* TourRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405A4EC273FEF3B005CEC0B /* TourRowView.swift */; };
+		8405A4EF273FF2C9005CEC0B /* TourHostBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405A4EE273FF2C9005CEC0B /* TourHostBottomView.swift */; };
+		8405A4F52740586A005CEC0B /* Parking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405A4F42740586A005CEC0B /* Parking.swift */; };
+		8405A4F72740672A005CEC0B /* RouteStepsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405A4F62740672A005CEC0B /* RouteStepsListView.swift */; };
 		846EB16727371B0B00D10D1A /* LandmarkHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846EB16627371B0B00D10D1A /* LandmarkHostView.swift */; };
 		846EB16927371B5E00D10D1A /* LandmarkRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846EB16827371B5E00D10D1A /* LandmarkRowView.swift */; };
 		846EB16B27371B7700D10D1A /* LandmarkDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846EB16A27371B7700D10D1A /* LandmarkDetailedView.swift */; };
@@ -29,7 +35,7 @@
 		847A5BA7272D8301007FAC53 /* MapWrapperWithCoreLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BA6272D8301007FAC53 /* MapWrapperWithCoreLocation.swift */; };
 		847A5BA9272D8559007FAC53 /* MapLocationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BA8272D8559007FAC53 /* MapLocationAnnotationView.swift */; };
 		847A5BAD272DB895007FAC53 /* HomeMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BAC272DB895007FAC53 /* HomeMainView.swift */; };
-		847A5BAF272DB9F2007FAC53 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BAE272DB9F2007FAC53 /* HomeHeaderView.swift */; };
+		847A5BAF272DB9F2007FAC53 /* TopMapHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BAE272DB9F2007FAC53 /* TopMapHeaderView.swift */; };
 		847A5BB1272DBCD9007FAC53 /* HomeHUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BB0272DBCD9007FAC53 /* HomeHUDView.swift */; };
 		847A5BBA272DCACB007FAC53 /* RealmMapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BB9272DCACB007FAC53 /* RealmMapLocation.swift */; };
 		847A5BBC272DCD06007FAC53 /* RealmWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BBB272DCD06007FAC53 /* RealmWrapper.swift */; };
@@ -50,6 +56,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8405A4E7273FE12F005CEC0B /* TourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourViewController.swift; sourceTree = "<group>"; };
+		8405A4E9273FE7E7005CEC0B /* tour.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tour.json; sourceTree = "<group>"; };
+		8405A4EC273FEF3B005CEC0B /* TourRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourRowView.swift; sourceTree = "<group>"; };
+		8405A4EE273FF2C9005CEC0B /* TourHostBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourHostBottomView.swift; sourceTree = "<group>"; };
+		8405A4F32740469B005CEC0B /* route-1.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "route-1.gpx"; sourceTree = "<group>"; };
+		8405A4F42740586A005CEC0B /* Parking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parking.swift; sourceTree = "<group>"; };
+		8405A4F62740672A005CEC0B /* RouteStepsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStepsListView.swift; sourceTree = "<group>"; };
 		846EB16627371B0B00D10D1A /* LandmarkHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkHostView.swift; sourceTree = "<group>"; };
 		846EB16827371B5E00D10D1A /* LandmarkRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkRowView.swift; sourceTree = "<group>"; };
 		846EB16A27371B7700D10D1A /* LandmarkDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetailedView.swift; sourceTree = "<group>"; };
@@ -72,7 +85,7 @@
 		847A5BA6272D8301007FAC53 /* MapWrapperWithCoreLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWrapperWithCoreLocation.swift; sourceTree = "<group>"; };
 		847A5BA8272D8559007FAC53 /* MapLocationAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationAnnotationView.swift; sourceTree = "<group>"; };
 		847A5BAC272DB895007FAC53 /* HomeMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainView.swift; sourceTree = "<group>"; };
-		847A5BAE272DB9F2007FAC53 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		847A5BAE272DB9F2007FAC53 /* TopMapHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMapHeaderView.swift; sourceTree = "<group>"; };
 		847A5BB0272DBCD9007FAC53 /* HomeHUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHUDView.swift; sourceTree = "<group>"; };
 		847A5BB9272DCACB007FAC53 /* RealmMapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMapLocation.swift; sourceTree = "<group>"; };
 		847A5BBB272DCD06007FAC53 /* RealmWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmWrapper.swift; sourceTree = "<group>"; };
@@ -88,7 +101,7 @@
 		84CA4306272C36ED0088FCDF /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
 		84CA4308272C385E0088FCDF /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 		84D18536273D4C6100748C8A /* GPSTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSTestViewController.swift; sourceTree = "<group>"; };
-		84E04FB2273EFEE000B47496 /* 20211112114311-81211-data.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "20211112114311-81211-data.gpx"; sourceTree = "<group>"; };
+		84E04FB2273EFEE000B47496 /* route-2.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "route-2.gpx"; sourceTree = "<group>"; };
 		84E04FB3273F1DF000B47496 /* CustomSKNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSKNode.swift; sourceTree = "<group>"; };
 		84E04FB5273F1E5D00B47496 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		84E04FB8273F1F5000B47496 /* LandmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkView.swift; sourceTree = "<group>"; };
@@ -106,6 +119,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8405A4EB273FEEEB005CEC0B /* Tour */ = {
+			isa = PBXGroup;
+			children = (
+				8405A4EC273FEF3B005CEC0B /* TourRowView.swift */,
+				8405A4EE273FF2C9005CEC0B /* TourHostBottomView.swift */,
+			);
+			path = Tour;
+			sourceTree = "<group>";
+		};
+		8405A4F227401C35005CEC0B /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				84D18536273D4C6100748C8A /* GPSTestViewController.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		846EB16527371AF200D10D1A /* Landmark */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +172,7 @@
 				846EB1812737334400D10D1A /* maplocation.json */,
 				846EB183273734E000D10D1A /* parking.json */,
 				846EB1852737357000D10D1A /* restaurants.json */,
+				8405A4E9273FE7E7005CEC0B /* tour.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -167,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				847A5BA8272D8559007FAC53 /* MapLocationAnnotationView.swift */,
+				8405A4F62740672A005CEC0B /* RouteStepsListView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -175,7 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				847A5BAC272DB895007FAC53 /* HomeMainView.swift */,
-				847A5BAE272DB9F2007FAC53 /* HomeHeaderView.swift */,
+				847A5BAE272DB9F2007FAC53 /* TopMapHeaderView.swift */,
 				847A5BB0272DBCD9007FAC53 /* HomeHUDView.swift */,
 			);
 			path = Home;
@@ -203,7 +235,8 @@
 		84CA42D9272C2E1F0088FCDF = {
 			isa = PBXGroup;
 			children = (
-				84E04FB2273EFEE000B47496 /* 20211112114311-81211-data.gpx */,
+				8405A4F32740469B005CEC0B /* route-1.gpx */,
+				84E04FB2273EFEE000B47496 /* route-2.gpx */,
 				84CA42E4272C2E1F0088FCDF /* Travel Travnik AR */,
 				84CA42E3272C2E1F0088FCDF /* Products */,
 			);
@@ -238,9 +271,10 @@
 		84CA42F9272C33620088FCDF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8405A4F227401C35005CEC0B /* Test */,
 				846EB17A273722C500D10D1A /* HomeViewController.swift */,
 				846EB17C2737261900D10D1A /* ARViewController.swift */,
-				84D18536273D4C6100748C8A /* GPSTestViewController.swift */,
+				8405A4E7273FE12F005CEC0B /* TourViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -260,6 +294,7 @@
 				84CA4306272C36ED0088FCDF /* Landmark.swift */,
 				846EB1782737201C00D10D1A /* Restaurant.swift */,
 				846EB189273736AE00D10D1A /* MapLocation.swift */,
+				8405A4F42740586A005CEC0B /* Parking.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -278,6 +313,7 @@
 		84CA42FD272C338D0088FCDF /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8405A4EB273FEEEB005CEC0B /* Tour */,
 				84E04FB7273F1F1D00B47496 /* AR */,
 				846EB17127371DFA00D10D1A /* Restaurants */,
 				846EB16C27371BFD00D10D1A /* Global */,
@@ -390,6 +426,7 @@
 				846EB1822737334400D10D1A /* maplocation.json in Resources */,
 				84CA42EF272C2E200088FCDF /* Assets.xcassets in Resources */,
 				846EB1802737290600D10D1A /* landmarks.json in Resources */,
+				8405A4EA273FE7E7005CEC0B /* tour.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,7 +441,7 @@
 				84E04FBB273F205700B47496 /* LandmarkMoreInfoView.swift in Sources */,
 				846EB16927371B5E00D10D1A /* LandmarkRowView.swift in Sources */,
 				84CA42EA272C2E1F0088FCDF /* ViewController.swift in Sources */,
-				847A5BAF272DB9F2007FAC53 /* HomeHeaderView.swift in Sources */,
+				847A5BAF272DB9F2007FAC53 /* TopMapHeaderView.swift in Sources */,
 				846EB16727371B0B00D10D1A /* LandmarkHostView.swift in Sources */,
 				846EB16E27371C2200D10D1A /* CirclePhotoLandmarkView.swift in Sources */,
 				846EB16B27371B7700D10D1A /* LandmarkDetailedView.swift in Sources */,
@@ -416,9 +453,11 @@
 				846EB17527371F9B00D10D1A /* RestaurantHostView.swift in Sources */,
 				84E04FB4273F1DF000B47496 /* CustomSKNode.swift in Sources */,
 				846EB18A273736AE00D10D1A /* MapLocation.swift in Sources */,
+				8405A4F72740672A005CEC0B /* RouteStepsListView.swift in Sources */,
 				846EB1882737363900D10D1A /* ReadJSONFromBundle.swift in Sources */,
 				84E04FB9273F1F5000B47496 /* LandmarkView.swift in Sources */,
 				847A5BA9272D8559007FAC53 /* MapLocationAnnotationView.swift in Sources */,
+				8405A4ED273FEF3B005CEC0B /* TourRowView.swift in Sources */,
 				847A5BBA272DCACB007FAC53 /* RealmMapLocation.swift in Sources */,
 				847A5BB1272DBCD9007FAC53 /* HomeHUDView.swift in Sources */,
 				847A5BAD272DB895007FAC53 /* HomeMainView.swift in Sources */,
@@ -426,11 +465,14 @@
 				847A5BA2272D6340007FAC53 /* MapLocationPoints.swift in Sources */,
 				846EB17B273722C500D10D1A /* HomeViewController.swift in Sources */,
 				84CA42E8272C2E1F0088FCDF /* SceneDelegate.swift in Sources */,
+				8405A4EF273FF2C9005CEC0B /* TourHostBottomView.swift in Sources */,
 				84CA4309272C385E0088FCDF /* Debug.swift in Sources */,
 				84CA4307272C36ED0088FCDF /* Landmark.swift in Sources */,
+				8405A4E8273FE12F005CEC0B /* TourViewController.swift in Sources */,
 				846EB17727371FD200D10D1A /* RestaurantDetailedView.swift in Sources */,
 				846EB17327371F1900D10D1A /* RestaurantRowView.swift in Sources */,
 				846EB17D2737261900D10D1A /* ARViewController.swift in Sources */,
+				8405A4F52740586A005CEC0B /* Parking.swift in Sources */,
 				847A5BBC272DCD06007FAC53 /* RealmWrapper.swift in Sources */,
 				84E04FB6273F1E5D00B47496 /* Extensions.swift in Sources */,
 				846EB1792737201C00D10D1A /* Restaurant.swift in Sources */,

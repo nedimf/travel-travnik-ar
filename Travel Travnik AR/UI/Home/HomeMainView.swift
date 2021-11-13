@@ -14,8 +14,8 @@ import SwiftUI
 // HomeMainView we can observe as host view for HomeViewController that contains of headerView and bodyView and navigationView
 class HomeMainView: UIView{
     
-    var headerView: HomeHeaderView = {
-        let headerView = HomeHeaderView()
+    var headerView: TopMapHeaderView = {
+        let headerView = TopMapHeaderView()
         headerView.translatesAutoresizingMaskIntoConstraints = false
         return headerView
     }()

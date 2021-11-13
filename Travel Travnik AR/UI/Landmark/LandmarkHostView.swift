@@ -31,7 +31,7 @@ struct LandmarkHostView: View {
                         .frame(width: UIScreen.main.bounds.width - 25, height: 50)
                     HStack{
                         Image(systemName: "magnifyingglass")
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Color(UIColor.Custom.black))
                         TextField(
                             searchHint,
                             text: $searchText,
@@ -63,7 +63,7 @@ struct LandmarkHostView: View {
                         ForEach(landmarks, id: \.id) { landmark in
                             NavigationLink(destination: LandmarkDetailedView(landmark: landmark)) {
                                 LandmarkRowView(landmark: landmark)
-                                    .foregroundColor(.black)
+                                    .foregroundColor(Color(UIColor.Custom.black))
                             }
                             .onAppear {
                                 print(landmark)

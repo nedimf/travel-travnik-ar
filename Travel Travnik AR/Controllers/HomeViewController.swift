@@ -7,21 +7,76 @@
 import Foundation
 import UIKit
 import SwiftUI
+import CoreLocation
 
 class HomeViewController: UIViewController{
+    
+    lazy var locationManger = CLLocationManager()
+    var mapWrapper: MapWrapper?
+    var mapLocationPoints = [MapLocationPoints]()
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .red
         let donorView = HomeMainView()
+        donorView.headerView.transparentView.isHidden = false
+        donorView.headerView.transparentView.isUserInteractionEnabled = true
+        donorView.headerView.transparentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openListOfRouteInstructions)))
         donorView.hudViewHC.rootView.delegate = self
         view = donorView
         
-        let landmarks = Bundle.main.decode([MapLocation].self, from: "maplocation.json")
+        mapWrapper  = MapWrapper(mapView: donorView.mapView, locationManager: locationManger, view: donorView.headerView, didClickOnAccessoryMapView: { coordinates in
+            print(coordinates)
+        })
         
-        print(landmarks)
+        let locations = Bundle.main.decode([MapLocation].self, from: "maplocation.json")
+        
+        for location in locations{
+            mapLocationPoints.append(MapLocationPoints(title: location.title, locationName: location.title, discipline: location.discipline, image: UIImage(named: location.image), coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)))
+        }
+        
+        if let mapWrapper = mapWrapper {
+            mapWrapper.setMapPoints(for: mapLocationPoints, with: .includingAll, settingView: LocationPointView.self)
+        }
 
+    }
+    
+    @objc func openListOfRouteInstructions(){
+        if let mapWrapper = mapWrapper {
+            var steps = [String]()
+            if let calculatedRoute = mapWrapper.calculatedRoute{
+                for step in calculatedRoute.steps{
+                    if (step.instructions != ""){
+                        steps.append(step.instructions)
+                    }
+                }
+                let listRouteHostVC = UIHostingController(rootView: RouteStepsListView(steps: steps))
+                let scene = UIApplication.shared.connectedScenes.first
+                if let sd : SceneDelegate = (scene?.delegate as? SceneDelegate) {
+                    sd.nc.pushViewController(listRouteHostVC, animated: true)
+                }
+            }
+           
+        }
+    }
+    
+    func selectOnlyParking(){
+        
+        let locations = Bundle.main.decode(Parking.self, from: "parking.json")
+        print(locations)
+        
+        var mapLocationPoints = [MapLocationPoints]()
+       
+        for location in locations{
+            mapLocationPoints.append(MapLocationPoints(title: location.title, locationName: location.title, discipline: location.discipline, image: UIImage(named: location.image), coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)))
+        }
+        
+        if let mapWrapper = mapWrapper {
+            mapWrapper.setMapPoints(for: mapLocationPoints, with: .includingAll, settingView: LocationPointView.self)
+        }
     }
 }
 
@@ -30,9 +85,8 @@ extension HomeViewController: HUDClickedDelegate{
     func hudClicked(id: Int, showParking: Bool) {
         
         let landmarksHostVC = UIHostingController(rootView: LandmarkHostView())
-        let restaurantHostVC = UIHostingController(rootView: RestaurantHostView())
-        let startTourVC = GPSViewController()
-        //let arController =
+        let restaurantHostVC = UIHostingController(rootView: RestaurantHostView(mapWrapper: mapWrapper))
+        let startTourVC = TourViewController()
         
         let scene = UIApplication.shared.connectedScenes.first
         switch(id){
@@ -52,12 +106,13 @@ extension HomeViewController: HUDClickedDelegate{
         case 3:
             print("PARKING \(showParking)")
             if (showParking){
-                //selectOnlyParking()
+                selectOnlyParking()
 
             }else{
-                //mapView.removeAnnotations(mapView.annotations)
-                //mapView.addAnnotations(setupMapPoints())
-
+                
+                if let mapWrapper = mapWrapper {
+                    mapWrapper.setMapPoints(for: mapLocationPoints, with: .includingAll, settingView: LocationPointView.self)
+                }
             }
         default:
             print("unexpected choice")

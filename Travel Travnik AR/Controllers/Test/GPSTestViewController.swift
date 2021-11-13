@@ -88,7 +88,7 @@ class GPSViewController: UIViewController{
             center: CLLocationCoordinate2D(latitude: 44.225, longitude: 17.67),
             span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
         
-        mapWrapper = MapWrapper(mapView: mapView, region: region, locationManager: locationManger, view: self.view,  debugView: coordinatesView) { coordinates in
+        mapWrapper = MapWrapper(mapView: mapView, locationManager: locationManger, view: nil,  debugView: coordinatesView) { coordinates in
             print(coordinates)
             
         }

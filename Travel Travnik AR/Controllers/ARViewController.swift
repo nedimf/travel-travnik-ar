@@ -12,6 +12,7 @@ import ARKit
 class ARViewController: UIViewController, ARSKViewDelegate {
     
     var landmark: LandmarkElement? = nil
+    var locationManager: CLLocationManager?
     var landmarkCustomSkNodes = [CustomSKNode]()
     let sceneView: ARSKView = {
        
@@ -20,7 +21,7 @@ class ARViewController: UIViewController, ARSKViewDelegate {
         
         return scene
     }()
-
+    
     var arScene:DefaultARScene!
     
     override func viewDidLoad() {
@@ -28,6 +29,9 @@ class ARViewController: UIViewController, ARSKViewDelegate {
         
         setupLayout()
         setupAR()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(openInstagram), name: UIApplication.userDidTakeScreenshotNotification, object: nil)
+
     }
     
     func setupLayout(){
@@ -36,7 +40,33 @@ class ARViewController: UIViewController, ARSKViewDelegate {
         
         NSLayoutConstraint.activate([
             sceneView.topAnchor.constraint(equalTo: self.view.topAnchor), sceneView.leftAnchor.constraint(equalTo: self.view.leftAnchor), sceneView.rightAnchor.constraint(equalTo: self.view.rightAnchor), sceneView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+        
         ])
+   
+    }
+    
+    @objc func openInstagram(){
+        
+        let alert = UIAlertController(title: "Share on Socials 📸", message: "", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Share On Instagram", style: .default , handler:{ (UIAlertAction)in
+            
+            let appURL = URL(string: "instagram://")!
+                let application = UIApplication.shared
+
+                if application.canOpenURL(appURL) {
+                    application.open(appURL)
+                }
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancle", style: .cancel, handler:{ (UIAlertAction)in
+                        print("User click Dismiss button")
+        }))
+        
+        self.present(alert, animated: true, completion: {
+            print("completion block")
+        })
     }
     
     func setupAR(){

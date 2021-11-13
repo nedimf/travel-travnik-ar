@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 // HomeHeaderView we can observe as host view for HomeViewController that contains of headerView and bodyView and navigationView
-class HomeHeaderView: UIView{
+class TopMapHeaderView: UIView{
     
     let topLabel: UILabel = {
         let label = UILabel()
@@ -22,7 +22,7 @@ class HomeHeaderView: UIView{
     
     let transparentView: UIView = {
         let view = UIView()
-        view.backgroundColor = .orange.withAlphaComponent(0.2)
+        view.backgroundColor = .black.withAlphaComponent(0.2)
         view.layer.cornerRadius = 12
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -44,7 +44,12 @@ class HomeHeaderView: UIView{
         transparentView.addSubview(topLabel)
         
         NSLayoutConstraint.activate([
-                        
+            
+            transparentView.topAnchor.constraint(equalTo: self.topAnchor),
+            transparentView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            transparentView.rightAnchor.constraint(equalTo: self.rightAnchor),
+            transparentView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
             topLabel.centerXAnchor.constraint(equalTo: transparentView.centerXAnchor),
             topLabel.centerYAnchor.constraint(equalTo: transparentView.centerYAnchor)
         

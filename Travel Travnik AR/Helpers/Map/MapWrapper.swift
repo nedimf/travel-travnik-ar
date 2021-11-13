@@ -17,8 +17,8 @@ class MapWrapper: NSObject{
     var calculatedRoute: MKRoute?
     var didClickOnAccessoryMapView: (CLLocationCoordinate2D) -> Void?
     var mapWrapperDelegate: MKMapViewDelegate?
-    var view: UIView?
-    var debugView: UILabel?
+    var view: TopMapHeaderView?
+    var debugView: UILabel?=nil
     
     var currentPlace: CLLocation?
     var directions = [String]()
@@ -27,22 +27,24 @@ class MapWrapper: NSObject{
     
     // Setting up region and showing it on Map View
     // Enable location to check for current coordinates
-    init(mapView: MKMapView, region: MKCoordinateRegion, locationManager: CLLocationManager,view: UIView?, debugView: UILabel,didClickOnAccessoryMapView: @escaping (CLLocationCoordinate2D) -> Void?) {
+    init(mapView: MKMapView, locationManager: CLLocationManager,view: TopMapHeaderView?, debugView: UILabel?=nil,didClickOnAccessoryMapView: @escaping (CLLocationCoordinate2D) -> Void?) {
         self.mapView =  mapView
-        self.region = region
         self.locationManager = locationManager
         self.view  = view
         self.debugView = debugView
         self.didClickOnAccessoryMapView = didClickOnAccessoryMapView
+        
+        let travnikCity = CLLocation(latitude: 44.2257017, longitude: 17.6364189)
+        self.region = MKCoordinateRegion(
+            center: travnikCity.coordinate,
+            latitudinalMeters: 10000,
+            longitudinalMeters: 20000
+        )
+        
         super.init()
         self.mapView.delegate = self
         
-        let travnikCity = CLLocation(latitude: 44.2257017, longitude: 17.6364189)
-        let region = MKCoordinateRegion(
-            center: travnikCity.coordinate,
-            latitudinalMeters: 50000,
-            longitudinalMeters: 60000
-        )
+    
         
         locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
@@ -103,7 +105,8 @@ class MapWrapper: NSObject{
                 directions.calculate { [self] response, error in
                     guard let route = response?.routes.first else { return }
                     self.calculatedRoute = route
-                    mapView.addAnnotations([startPointAnnotation, destinationPointAnnotation])
+                    self.routeSteps = route.steps
+                    mapView.addAnnotations([p1, p2])
                     mapView.addOverlay(route.polyline)
                     mapView.setVisibleMapRect(
                         route.polyline.boundingMapRect,
@@ -137,7 +140,32 @@ class MapWrapper: NSObject{
         guard let calculatedRoute = calculatedRoute else {
             return  nil
         }
+
         return calculatedRoute
+    }
+    
+    //Get nearest points to location
+    //Mainly used to sort landmarks in start tour mode
+    func getNearestPoints(array: Landmark) -> Landmark?{
+        guard let currentPlace = currentPlace else {
+            return nil
+        }
+
+        let current = CLLocation(latitude: currentPlace.coordinate.latitude, longitude: currentPlace.coordinate.longitude)
+        var dictArray = [[String: Any]]()
+        for i in 0..<array.count{
+            let loc = CLLocation(latitude: array[i].coordinates.lat, longitude: array[i].coordinates.log)
+            let distanceInMeters = current.distance(from: loc)
+            let a:[String: Any] = ["distance": distanceInMeters, "coordinate": array[i]]
+            dictArray.append(a)
+        }
+        
+        dictArray = dictArray.sorted(by: {($0["distance"] as! CLLocationDistance) < ($1["distance"] as! CLLocationDistance)})
+        var sortedArray = Landmark()
+        for i in dictArray{
+            sortedArray.append(i["coordinate"] as! LandmarkElement)
+        }
+        return sortedArray
     }
     
     func annotationFactory(title: String, subtitle: String, placemark: MKPlacemark) -> MKPointAnnotation{
@@ -179,10 +207,10 @@ extension MapWrapper: MKMapViewDelegate{
         if let annotation = view.annotation {
             self.didClickOnAccessoryMapView(annotation.coordinate)
             
-            let a = MapLocationPoints(title: "sss", locationName: nil, discipline: nil, image: nil, coordinate: annotation.coordinate)
-            let b = MapLocationPoints(title: "222", locationName: nil, discipline: nil, image: nil, coordinate: currentPlace!.coordinate)
+            let a = MapLocationPoints(title: "point", locationName: nil, discipline: nil, image: UIImage(systemName: "mappin"), coordinate: annotation.coordinate)
+            let b = MapLocationPoints(title: "point", locationName: nil, discipline: nil, image: UIImage(systemName: "mappin"), coordinate: currentPlace!.coordinate)
             
-            let route = setRouteOnMap(l1: b, l2: a, transportType: MKDirectionsTransportType.automobile)
+            let route = setRouteOnMap(l1: a, l2: b, transportType: MKDirectionsTransportType.automobile)
             
             print(route)
         }

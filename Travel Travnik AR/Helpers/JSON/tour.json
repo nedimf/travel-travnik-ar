@@ -1,0 +1,51 @@
+[
+    {
+        "tour":[
+            {
+                "content":"Stari grad Travnik",
+                "about":"Travnička tvrđava izgrađena je prije dolaska Osmanlija, a za turskog doba je dobila sadašnji izgled. Jedna je od najočuvanijih i najljepših srednjovjekovnih tvrđava u BiH i definitivno razlog zbog kojeg se treba posjetiti Travnik, na koji se sa tvrđave pruža prekrasan pogled"
+            }
+        ],
+    },
+    {
+        "tour":[
+            {
+                "content":"Zavičajni muzej",
+                "about":"Idealno mjesto za upoznati se sa prošlošću, kulturom i prirodnom baštinom Travnika i Srednje Bosne. U fundusu Muzeja nalazi se 80 hiljada vrijednih eksponata, a uz samu zgradu Muzeja postavljena je i restaurirana kompozicija parnog voza Ćire sa raritetnom lokomotivom"
+            }
+        ],
+    },
+    {
+        "tour":[
+            {
+                "content":"Šarena džamija",
+                "about":"Džamija, koju je na mjestu još starije podigao Sulejman-paša Skopljak, po kojem se zove i Sulejmanija, jedinstven je primjer osmanske arhitekture u Bosni i Hercegovini. Naziv Šarena džamija dobila je po svojim bogatim, raznobojnim zidnim dekoracijama"
+            }
+        ],
+    },
+    {
+        "tour":[
+            {
+                "content":" Rodna kuća Ive Andrića",
+                "about":"U tradicionalnoj bosanskoj kući u travničkoj mahali Zenjak, u kojoj se 09. oktobra 1892. godine rodio Ivo Andrić, jedini autor sa ovih prostora koji je dobio Nobelovu nagradu za književnost, danas djeluje Memorijalni muzej posvećen ovom književniku i njegovom bogatom opusu."
+            }
+        ],
+    },
+    {
+        "tour":[
+            {
+                "content":"Plava voda",
+                "about":"Izvorište Plava voda u travničkom naselju Šumeće omiljeno je odmorište Travničana i posjetitelja ovog grada. Na Plavoj vodi je i čuvena Lutvina kahva, gdje se za potpuni merak bosanska kahva služi u džezvi, fildžanu, uz rahat lokum, cigaretu i šibicu."
+            }
+        ],
+    },
+    {
+        "tour":[
+            {
+                "content":"Travnički ćevapčići",
+                "about":"Brojni se gradovi bore za vlasnika titule „grada sa najboljim ćevapima u BiH“, a Travnik je definitivno među favoritima. Travnički ćevapčići sigurno se nalaze uz bok sarajevskih i banjalučkih i jedan su od razloga za posjetiti grad na Lašvi."
+            }
+        ],
+    }
+
+]

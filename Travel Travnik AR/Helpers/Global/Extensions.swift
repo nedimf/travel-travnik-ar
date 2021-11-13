@@ -8,6 +8,7 @@ import Foundation
 import UIKit
 import SwiftUI
 import Photos
+import VideoToolbox
 
 extension UIViewController {
 
@@ -38,6 +39,8 @@ extension UIViewController {
         /// Notify the hosting controller that it has been moved to the current view controller.
         hostingController.didMove(toParent: self)
     }
+    
+    
 }
 
 extension View {
@@ -57,3 +60,17 @@ extension View {
         }
     }
 }
+
+extension UIColor{
+    struct Custom {
+        static var black: UIColor{
+            if #available(iOS 13, *) {
+                return UIColor.init { (trait) -> UIColor in
+                    return trait.userInterfaceStyle == .dark ? UIColor.white : UIColor.black
+                }
+            }
+            return UIColor.black
+        }
+    }
+}
+
