@@ -7,15 +7,35 @@
 import Foundation
 import UIKit
 
-struct Landmark{
+// MARK: - LandmarkElement
+struct LandmarkElement: Codable {
     let id = UUID()
-    var title: String
-    var description: String
-    var header: UIImage? = nil
-    var moreInformation: LandmarkMoreInformation
+    let title, landmarkDescription, header: String
+    let moreInformation: [MoreInformation]
+    let coordinates: Coordinates
+    let moreInformationPhotos: [MoreInformationPhoto]
+    
+
+    enum CodingKeys: String, CodingKey {
+         case title
+         case landmarkDescription = "description:"
+         case header, coordinates, moreInformation, moreInformationPhotos
+     }
 }
 
-struct LandmarkMoreInformation{
-    var content: String? = nil
-    var photos = [UIImage]()
+// MARK: - MoreInformation
+struct MoreInformation: Codable {
+    let title, content: String
 }
+
+// MARK: - Coordinates
+struct Coordinates: Codable {
+    let lat, log: Double
+}
+
+// MARK: - MoreInformationPhoto
+struct MoreInformationPhoto: Codable {
+    let name: String
+}
+
+typealias Landmark = [LandmarkElement]

@@ -8,12 +8,21 @@ import SwiftUI
 import MapKit
 
 struct RestaurantHostView: View {
-    @State var restaurants = [Restaurant]()
+    @State var restaurants: Restaurant? = nil
     @State var searchText = ""
+    @State var openRandomRestaurant = false
+    @State var randomNumber = 0
+    @State var searchHint = ""
     
     var body: some View {
         VStack{
             VStack(){
+                if let restaurants = restaurants {
+                    NavigationLink(destination: RestaurantDetailedView(restaurant: restaurants[randomNumber]), isActive: $openRandomRestaurant){
+                        EmptyView()
+                    }
+                }
+                // -MARK: Search bar
                 ZStack(alignment: .center){
                     RoundedRectangle(cornerRadius: 15)
                         .fill(Color.gray.opacity(0.05))
@@ -23,7 +32,7 @@ struct RestaurantHostView: View {
                         Image(systemName: "magnifyingglass")
                             .foregroundColor(Color.black)
                         TextField(
-                            "lipa",
+                            searchHint,
                             text: $searchText,
                             onEditingChanged: { (isBegin) in
                                 if isBegin {
@@ -36,8 +45,10 @@ struct RestaurantHostView: View {
                             onCommit: {
                                 //get text and filter list
                                 if (searchText != ""){
-                                    restaurants = restaurants.filter{
-                                        $0.title.contains(searchText)
+                                    if let unwrapRestaurant = restaurants{
+                                        restaurants = unwrapRestaurant.filter{
+                                            $0.title.contains(searchText)
+                                        }
                                     }
                                 }
                             })
@@ -47,15 +58,18 @@ struct RestaurantHostView: View {
             
             ScrollView(.horizontal) {
                 LazyHStack {
-                    ForEach(restaurants, id: \.id) { restaurant in
-                        NavigationLink(destination: RestaurantDetailedView()) {
-                            RestaurantRowView()
-                                .foregroundColor(.black)
-                        }
-                        .onAppear {
-                            print(restaurants)
+                    if let restaurants = restaurants {
+                        ForEach(restaurants, id: \.id) { restaurant in
+                            NavigationLink(destination: RestaurantDetailedView(restaurant: restaurant)) {
+                                RestaurantRowView(restaurant: restaurant)
+                                    .foregroundColor(.black)
+                            }
+                            .onAppear {
+                                print(restaurants)
+                            }
                         }
                     }
+
                 }
             }
             
@@ -64,16 +78,22 @@ struct RestaurantHostView: View {
         
         .onAppear {
             
-            restaurants.append(Restaurant(title: "Rest1", description: "Some description", mapCoordinates: CLLocationCoordinate2D(latitude: 21.2312, longitude: -123.232) ))
-            restaurants.append(Restaurant(title: "Rest2", description: "Some description", mapCoordinates: CLLocationCoordinate2D(latitude: 21.2312, longitude: -123.232) ))
-            restaurants.append(Restaurant(title: "Rest3", description: "Some description", mapCoordinates: CLLocationCoordinate2D(latitude: 21.2312, longitude: -123.232) ))
+           restaurants = Bundle.main.decode(Restaurant.self, from: "restaurants.json")
+            
+            if let restaurants = restaurants {
+                searchHint = restaurants[Int.random(in: 0..<restaurants.count)].title
+            }
             
         }
         .navigationTitle("Restaurants")
         .toolbar {
             Image(systemName: "cube.fill")
                 .onTapGesture {
-                    print("random destination")
+                    if let restaurants = restaurants {
+                        openRandomRestaurant = true
+                        randomNumber = Int.random(in: 0..<restaurants.count)
+                        
+                    }
                 }
         }
     }

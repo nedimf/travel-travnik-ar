@@ -15,7 +15,7 @@ import SwiftUI
 class DefaultARScene: SKScene{
     
     var isARWorldSetup = false
-    var defaultSKNodes = [SKSceneDefaultNode]()
+    var defaultSKNodes = [CustomSKNode]()
     private var clickNodeCounter = 0
 
     
@@ -83,7 +83,7 @@ class DefaultARScene: SKScene{
                         
                         if tappedCustomNode.name == self.defaultSKNodes[clickNodeCounter-1].nodeName {
                             // Set tapped custom node texture
-                            tappedCustomNode.texture = SKTexture(image: self.defaultSKNodes[clickNodeCounter].scaledImageForShowing)
+                            tappedCustomNode.texture = SKTexture(image: self.defaultSKNodes[clickNodeCounter].scaledImageToShow)
                             tappedCustomNode.name = self.defaultSKNodes[clickNodeCounter].nodeName
                         }
                     }

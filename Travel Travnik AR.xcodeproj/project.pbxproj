@@ -31,8 +31,6 @@
 		847A5BAD272DB895007FAC53 /* HomeMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BAC272DB895007FAC53 /* HomeMainView.swift */; };
 		847A5BAF272DB9F2007FAC53 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BAE272DB9F2007FAC53 /* HomeHeaderView.swift */; };
 		847A5BB1272DBCD9007FAC53 /* HomeHUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BB0272DBCD9007FAC53 /* HomeHUDView.swift */; };
-		847A5BB4272DC951007FAC53 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 847A5BB3272DC951007FAC53 /* Realm */; };
-		847A5BB6272DC951007FAC53 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 847A5BB5272DC951007FAC53 /* RealmSwift */; };
 		847A5BBA272DCACB007FAC53 /* RealmMapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BB9272DCACB007FAC53 /* RealmMapLocation.swift */; };
 		847A5BBC272DCD06007FAC53 /* RealmWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BBB272DCD06007FAC53 /* RealmWrapper.swift */; };
 		847A5BBE272DDEA3007FAC53 /* RealmLandmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A5BBD272DDEA3007FAC53 /* RealmLandmark.swift */; };
@@ -42,10 +40,13 @@
 		84CA42EA272C2E1F0088FCDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA42E9272C2E1F0088FCDF /* ViewController.swift */; };
 		84CA42EF272C2E200088FCDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CA42EE272C2E200088FCDF /* Assets.xcassets */; };
 		84CA4301272C33D00088FCDF /* DefaultARScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA4300272C33D00088FCDF /* DefaultARScene.swift */; };
-		84CA4304272C36780088FCDF /* SKSceneDefaultNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA4303272C36780088FCDF /* SKSceneDefaultNode.swift */; };
 		84CA4307272C36ED0088FCDF /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA4306272C36ED0088FCDF /* Landmark.swift */; };
 		84CA4309272C385E0088FCDF /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA4308272C385E0088FCDF /* Debug.swift */; };
 		84D18537273D4C6100748C8A /* GPSTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D18536273D4C6100748C8A /* GPSTestViewController.swift */; };
+		84E04FB4273F1DF000B47496 /* CustomSKNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E04FB3273F1DF000B47496 /* CustomSKNode.swift */; };
+		84E04FB6273F1E5D00B47496 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E04FB5273F1E5D00B47496 /* Extensions.swift */; };
+		84E04FB9273F1F5000B47496 /* LandmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E04FB8273F1F5000B47496 /* LandmarkView.swift */; };
+		84E04FBB273F205700B47496 /* LandmarkMoreInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E04FBA273F205700B47496 /* LandmarkMoreInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,11 +85,14 @@
 		84CA42EE272C2E200088FCDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84CA42F3272C2E200088FCDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84CA4300272C33D00088FCDF /* DefaultARScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultARScene.swift; sourceTree = "<group>"; };
-		84CA4303272C36780088FCDF /* SKSceneDefaultNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKSceneDefaultNode.swift; sourceTree = "<group>"; };
 		84CA4306272C36ED0088FCDF /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
 		84CA4308272C385E0088FCDF /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 		84D18536273D4C6100748C8A /* GPSTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSTestViewController.swift; sourceTree = "<group>"; };
-		84D18538273D9A4400748C8A /* mapstogpx20211015_222410.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = mapstogpx20211015_222410.gpx; path = ../../../../Downloads/mapstogpx20211015_222410.gpx; sourceTree = "<group>"; };
+		84E04FB2273EFEE000B47496 /* 20211112114311-81211-data.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "20211112114311-81211-data.gpx"; sourceTree = "<group>"; };
+		84E04FB3273F1DF000B47496 /* CustomSKNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSKNode.swift; sourceTree = "<group>"; };
+		84E04FB5273F1E5D00B47496 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		84E04FB8273F1F5000B47496 /* LandmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkView.swift; sourceTree = "<group>"; };
+		84E04FBA273F205700B47496 /* LandmarkMoreInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkMoreInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +100,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				847A5BB6272DC951007FAC53 /* RealmSwift in Frameworks */,
-				847A5BB4272DC951007FAC53 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +203,7 @@
 		84CA42D9272C2E1F0088FCDF = {
 			isa = PBXGroup;
 			children = (
-				84D18538273D9A4400748C8A /* mapstogpx20211015_222410.gpx */,
+				84E04FB2273EFEE000B47496 /* 20211112114311-81211-data.gpx */,
 				84CA42E4272C2E1F0088FCDF /* Travel Travnik AR */,
 				84CA42E3272C2E1F0088FCDF /* Products */,
 			);
@@ -276,6 +278,7 @@
 		84CA42FD272C338D0088FCDF /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				84E04FB7273F1F1D00B47496 /* AR */,
 				846EB17127371DFA00D10D1A /* Restaurants */,
 				846EB16C27371BFD00D10D1A /* Global */,
 				846EB16527371AF200D10D1A /* Landmark */,
@@ -298,6 +301,7 @@
 			children = (
 				84CA4308272C385E0088FCDF /* Debug.swift */,
 				846EB1872737363900D10D1A /* ReadJSONFromBundle.swift */,
+				84E04FB5273F1E5D00B47496 /* Extensions.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -305,7 +309,16 @@
 		84CA4302272C365D0088FCDF /* AR */ = {
 			isa = PBXGroup;
 			children = (
-				84CA4303272C36780088FCDF /* SKSceneDefaultNode.swift */,
+				84E04FB3273F1DF000B47496 /* CustomSKNode.swift */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
+		84E04FB7273F1F1D00B47496 /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				84E04FB8273F1F5000B47496 /* LandmarkView.swift */,
+				84E04FBA273F205700B47496 /* LandmarkMoreInfoView.swift */,
 			);
 			path = AR;
 			sourceTree = "<group>";
@@ -327,8 +340,6 @@
 			);
 			name = "Travel Travnik AR";
 			packageProductDependencies = (
-				847A5BB3272DC951007FAC53 /* Realm */,
-				847A5BB5272DC951007FAC53 /* RealmSwift */,
 			);
 			productName = "Travel Travnik AR";
 			productReference = 84CA42E2272C2E1F0088FCDF /* Travel Travnik AR.app */;
@@ -359,7 +370,6 @@
 			);
 			mainGroup = 84CA42D9272C2E1F0088FCDF;
 			packageReferences = (
-				847A5BB2272DC951007FAC53 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = 84CA42E3272C2E1F0088FCDF /* Products */;
 			projectDirPath = "";
@@ -391,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				847A5BA7272D8301007FAC53 /* MapWrapperWithCoreLocation.swift in Sources */,
+				84E04FBB273F205700B47496 /* LandmarkMoreInfoView.swift in Sources */,
 				846EB16927371B5E00D10D1A /* LandmarkRowView.swift in Sources */,
 				84CA42EA272C2E1F0088FCDF /* ViewController.swift in Sources */,
 				847A5BAF272DB9F2007FAC53 /* HomeHeaderView.swift in Sources */,
@@ -403,8 +414,10 @@
 				84CA42E6272C2E1F0088FCDF /* AppDelegate.swift in Sources */,
 				847A5BC0272DDEB6007FAC53 /* RealmRestaurant.swift in Sources */,
 				846EB17527371F9B00D10D1A /* RestaurantHostView.swift in Sources */,
+				84E04FB4273F1DF000B47496 /* CustomSKNode.swift in Sources */,
 				846EB18A273736AE00D10D1A /* MapLocation.swift in Sources */,
 				846EB1882737363900D10D1A /* ReadJSONFromBundle.swift in Sources */,
+				84E04FB9273F1F5000B47496 /* LandmarkView.swift in Sources */,
 				847A5BA9272D8559007FAC53 /* MapLocationAnnotationView.swift in Sources */,
 				847A5BBA272DCACB007FAC53 /* RealmMapLocation.swift in Sources */,
 				847A5BB1272DBCD9007FAC53 /* HomeHUDView.swift in Sources */,
@@ -412,7 +425,6 @@
 				847A5BBE272DDEA3007FAC53 /* RealmLandmark.swift in Sources */,
 				847A5BA2272D6340007FAC53 /* MapLocationPoints.swift in Sources */,
 				846EB17B273722C500D10D1A /* HomeViewController.swift in Sources */,
-				84CA4304272C36780088FCDF /* SKSceneDefaultNode.swift in Sources */,
 				84CA42E8272C2E1F0088FCDF /* SceneDelegate.swift in Sources */,
 				84CA4309272C385E0088FCDF /* Debug.swift in Sources */,
 				84CA4307272C36ED0088FCDF /* Landmark.swift in Sources */,
@@ -420,6 +432,7 @@
 				846EB17327371F1900D10D1A /* RestaurantRowView.swift in Sources */,
 				846EB17D2737261900D10D1A /* ARViewController.swift in Sources */,
 				847A5BBC272DCD06007FAC53 /* RealmWrapper.swift in Sources */,
+				84E04FB6273F1E5D00B47496 /* Extensions.swift in Sources */,
 				846EB1792737201C00D10D1A /* Restaurant.swift in Sources */,
 				84D18537273D4C6100748C8A /* GPSTestViewController.swift in Sources */,
 			);
@@ -620,30 +633,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		847A5BB2272DC951007FAC53 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-cocoa.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		847A5BB3272DC951007FAC53 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 847A5BB2272DC951007FAC53 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = Realm;
-		};
-		847A5BB5272DC951007FAC53 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 847A5BB2272DC951007FAC53 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = RealmSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 84CA42DA272C2E1F0088FCDF /* Project object */;
 }

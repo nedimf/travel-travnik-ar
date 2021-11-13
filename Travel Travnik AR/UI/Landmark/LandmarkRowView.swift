@@ -5,17 +5,22 @@
 
 
 import SwiftUI
+import CoreLocation
+import MapKit
 
 struct LandmarkRowView: View {
     
-    @State var landmark: Landmark
+    @State var landmark: LandmarkElement
+    
     var body: some View {
         VStack{
-            MapView()
-                .ignoresSafeArea(edges: .top)
+            MapView(region: MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: landmark.coordinates.lat, longitude: landmark.coordinates.log),
+                span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+            )).ignoresSafeArea(edges: .top)
                 .frame(height: 300)
             
-            CirclePhotoLandmarkView(image: Image(uiImage: landmark.header!))
+            CirclePhotoLandmarkView(image: Image(landmark.header))
                 .offset(y: -130)
                 .padding(.bottom, -130)
             
@@ -30,7 +35,7 @@ struct LandmarkRowView: View {
                 }.padding(.bottom, 5)
             
                 HStack {
-                    Text(landmark.description)
+                    Text(landmark.landmarkDescription)
                         .font(.subheadline)
                     Spacer()
                     Text("Travnik")
@@ -49,6 +54,6 @@ struct LandmarkRowView: View {
 
 struct LandmarkRowView_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkDetailedView(landmark: Landmark(title: "", description: "", header: nil, moreInformation: .init()))
+        LandmarkRowView(landmark: LandmarkElement(title: "", landmarkDescription: "", header: "", moreInformation: [MoreInformation(title: "lol", content: "lol")], coordinates: Coordinates(lat: 34.343, log: 233.34), moreInformationPhotos: [MoreInformationPhoto(name: "lol")]))
     }
 }

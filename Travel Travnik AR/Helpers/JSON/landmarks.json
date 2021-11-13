@@ -4,7 +4,11 @@
     {
         "title":"Plava voda",
         "description:":"Plava Voda Travnik",
-        "header":"plava-voda/p1",
+        "header":"plava-voda/1",
+        "coordinates":{
+           "lat":44.23011981955391,
+           "log":17.671531688857794
+          },
         "moreInformation":[
             {
                 "title":"",
@@ -49,6 +53,10 @@
         "title":"Šarena džamija",
         "description:":"Sulejmanija Šarena džamija Travnik",
         "header":"sarena-dzamija/header",
+        "coordinates":{
+           "lat":44.22660458074596,
+           "log":17.670025961941477
+          },
         "moreInformation":[
             {
                 "title":"",

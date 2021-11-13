@@ -7,9 +7,19 @@
 import Foundation
 import CoreLocation
 
-struct Restaurant{
+// MARK: - RestaurantElement
+struct RestaurantElement: Codable {
     let id = UUID()
-    let title: String
-    let description: String
-    let mapCoordinates: CLLocationCoordinate2D
+    let title, about, image: String
+    let latitude, longitude: Double
+    let stars: Int
+
+    enum CodingKeys: String, CodingKey {
+        case title
+        case about = "about:"
+        case stars
+        case image, latitude, longitude
+    }
 }
+
+typealias Restaurant = [RestaurantElement]

@@ -5,25 +5,31 @@
 
 
 import SwiftUI
+import MapKit
 
 struct RestaurantDetailedView: View {
+    @State var restaurant: RestaurantElement
+    
     var body: some View {
         ScrollView {
-                   MapView()
+            MapView(region: MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: restaurant.latitude, longitude: restaurant.longitude),
+                span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+            ))
                        .ignoresSafeArea(edges: .top)
                        .frame(height: 300)
 
-            CirclePhotoLandmarkView(image: Image("gradska-kafana-lipa"))
+            CirclePhotoLandmarkView(image: Image(restaurant.image))
                        .offset(y: -130)
                        .padding(.bottom, -130)
 
                    VStack(alignment: .leading) {
-                       Text("Gradska kafana LIPA")
+                       Text(restaurant.title)
                            .font(.title)
                            .foregroundColor(.primary)
 
                        HStack {
-                           Text("Gradska kafana Lipa")
+                           Text(restaurant.title)
                            Spacer()
                            Text("Travnik")
                        }
@@ -34,13 +40,14 @@ struct RestaurantDetailedView: View {
 
                        Text("About restaurant")
                            .font(.title2)
-                       Text("Gradska kafana LIPA is located in center of Travnik, it has vast amount of drinks available for everyones taste.\n\nTo learn more about this restaurant please visit their [web site](http://location.com). Click on right corner icon to get directions to the **Gradska kafa LIPA**")
+                       //Very risky, but this is only option we can do so far on this
+                       try! Text(AttributedString(markdown: restaurant.about))
                    }
                    .padding()
 
                    Spacer()
         }
-        .navigationTitle("LIPA")
+        .navigationTitle(restaurant.title)
         .toolbar{
             Image(systemName: "car.fill")
                 .onTapGesture {
@@ -53,6 +60,6 @@ struct RestaurantDetailedView: View {
 
 struct RestaurantDetailedView_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantDetailedView()
+        RestaurantDetailedView(restaurant: RestaurantElement(title: "", about: "", image: "", latitude: 0.0, longitude: 0.0, stars: 1))
     }
 }

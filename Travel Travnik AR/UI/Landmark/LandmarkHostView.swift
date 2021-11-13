@@ -7,12 +7,23 @@
 import SwiftUI
 
 struct LandmarkHostView: View {
-    @State var landmarks = [Landmark]()
+    @State var landmarks: Landmark? = nil
     @State var searchText = ""
+    @State var openRandomLandmark = false
+    @State var randomNumber = 0
+    @State var searchHint = ""
+
     
     var body: some View {
         VStack{
             VStack(){
+                if let landmarks = landmarks {
+                    NavigationLink(destination: LandmarkDetailedView(landmark: landmarks[randomNumber]), isActive: $openRandomLandmark){
+                        EmptyView()
+                    }
+                }
+               
+                // -MARK: Search bar
                 ZStack(alignment: .center){
                     RoundedRectangle(cornerRadius: 15)
                         .fill(Color.gray.opacity(0.05))
@@ -22,7 +33,7 @@ struct LandmarkHostView: View {
                         Image(systemName: "magnifyingglass")
                             .foregroundColor(Color.black)
                         TextField(
-                            "Ivo Andric",
+                            searchHint,
                             text: $searchText,
                             onEditingChanged: { (isBegin) in
                                 if isBegin {
@@ -35,8 +46,10 @@ struct LandmarkHostView: View {
                             onCommit: {
                                 //get text and filter list
                                 if (searchText != ""){
-                                    landmarks = landmarks.filter{
-                                        $0.title.contains(searchText)
+                                    if let unWrapLandmark = landmarks {
+                                        landmarks = unWrapLandmark.filter{
+                                            $0.title.contains(searchText)
+                                        }
                                     }
                                 }
                             })
@@ -46,13 +59,15 @@ struct LandmarkHostView: View {
             
             ScrollView(.horizontal) {
                 LazyHStack {
-                    ForEach(landmarks, id: \.id) { landmark in
-                        NavigationLink(destination: LandmarkDetailedView(landmark: landmark)) {
-                            LandmarkRowView(landmark: landmark)
-                                .foregroundColor(.black)
-                        }
-                        .onAppear {
-                            print(landmark)
+                    if let landmarks = landmarks {
+                        ForEach(landmarks, id: \.id) { landmark in
+                            NavigationLink(destination: LandmarkDetailedView(landmark: landmark)) {
+                                LandmarkRowView(landmark: landmark)
+                                    .foregroundColor(.black)
+                            }
+                            .onAppear {
+                                print(landmark)
+                            }
                         }
                     }
                 }
@@ -63,15 +78,24 @@ struct LandmarkHostView: View {
         
         .onAppear {
             
-            landmarks.append(Landmark(title: "Birth house of Ivo Andric", description: "Birth house of nobel prize winner Ivo Andric", header: UIImage(named: "ivoandric"), moreInformation: .init()))
-            landmarks.append(Landmark(title: "Sulejmanija mosque", description: "Sulejmanija mosque", header: UIImage(named: "sarena-dzamija/1"), moreInformation: .init()))
-            landmarks.append(Landmark(title: "Plava Voda", description: "Beautiful river side", header: UIImage(named: "plava-voda/p4"), moreInformation: .init()))
+            landmarks = Bundle.main.decode(Landmark.self, from: "landmarks.json")
+
+            if let landmarks = landmarks {
+                searchHint = landmarks[Int.random(in: 0..<landmarks.count)].title
+            }
             
         }
         .navigationTitle("Monuments")
         .toolbar {
             Image(systemName: "cube.fill")
                 .onTapGesture {
+                    if let landmarks = landmarks {
+                        openRandomLandmark = true
+                    randomNumber = Int.random(in: 0..<landmarks.count)
+                    
+
+                    }
+                    
                     print("random destination")
                 }
         }
@@ -80,6 +104,6 @@ struct LandmarkHostView: View {
 
 struct LandmarkHostView_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkHostView()
+        LandmarkHostView(landmarks: .init())
     }
 }

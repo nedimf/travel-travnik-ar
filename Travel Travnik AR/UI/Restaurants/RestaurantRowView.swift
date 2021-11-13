@@ -5,20 +5,25 @@
 
 
 import SwiftUI
+import MapKit
 
 struct RestaurantRowView: View {
+    var restaurant: RestaurantElement
     var body: some View {
         VStack{
-            MapView()
+            MapView(region: MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: restaurant.latitude, longitude: restaurant.longitude),
+                span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+            ))
                 .ignoresSafeArea(edges: .top)
                 .frame(height: 300)
             
-            CirclePhotoLandmarkView(image: Image("gradska-kafana-lipa"))
+            CirclePhotoLandmarkView(image: Image(restaurant.image))
                 .offset(y: -130)
                 .padding(.bottom, -130)
             
             HStack(alignment: .center){
-                ForEach(0...4, id: \.self){_ in
+                ForEach(0..<restaurant.stars, id: \.self){_ in
                     Image(systemName: "star.fill")
                         .foregroundColor(Color.yellow)
                 }
@@ -28,7 +33,7 @@ struct RestaurantRowView: View {
             VStack(alignment: .leading) {
               
                 HStack{
-                    Text("Gradska Kafana Lipa")
+                    Text(restaurant.title)
                         .font(.title)
                 }.padding(.bottom, 5)
             
@@ -36,7 +41,7 @@ struct RestaurantRowView: View {
                     Text("Restaurant ")
                         .font(.subheadline)
                     Spacer()
-                    Text("Bosanska bb")
+                    Text("Travnik, BiH")
                         .font(.subheadline)
                 }
             }.padding()
@@ -52,6 +57,6 @@ struct RestaurantRowView: View {
 
 struct RestaurantRowView_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantRowView()
+        RestaurantRowView(restaurant: RestaurantElement(title: "", about: "", image: "", latitude: 0.0, longitude: 0.0, stars: 1))
     }
 }
