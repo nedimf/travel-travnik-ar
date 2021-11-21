@@ -103,7 +103,7 @@ class TourViewController: UIViewController {
             if let calculatedRoute = mapWrapper.calculatedRoute{
                 for step in calculatedRoute.steps{
                     if (step.instructions != ""){
-                        steps.append(step.instructions)
+                        steps.append("In \(step.distance.rounded()) meters, \(step.instructions)")
                     }
                 }
                 let listRouteHostVC = UIHostingController(rootView: RouteStepsListView(steps: steps))

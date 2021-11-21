@@ -55,7 +55,7 @@ struct RestaurantDetailedView: View {
         }
         .navigationTitle(restaurant.title)
         .toolbar{
-            Image(systemName: "car.fill")
+            Image(systemName: "arrow.triangle.turn.up.right.diamond.fill")
                 .onTapGesture {
                     
                     if let mapWrapper = mapWrapper {

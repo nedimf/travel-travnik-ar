@@ -91,6 +91,7 @@
 		847A5BBB272DCD06007FAC53 /* RealmWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmWrapper.swift; sourceTree = "<group>"; };
 		847A5BBD272DDEA3007FAC53 /* RealmLandmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmLandmark.swift; sourceTree = "<group>"; };
 		847A5BBF272DDEB6007FAC53 /* RealmRestaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRestaurant.swift; sourceTree = "<group>"; };
+		84BDF3F5274AC46000F5318A /* path-3.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "path-3.gpx"; sourceTree = "<group>"; };
 		84CA42E2272C2E1F0088FCDF /* Travel Travnik AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel Travnik AR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CA42E5272C2E1F0088FCDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84CA42E7272C2E1F0088FCDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -235,6 +236,7 @@
 		84CA42D9272C2E1F0088FCDF = {
 			isa = PBXGroup;
 			children = (
+				84BDF3F5274AC46000F5318A /* path-3.gpx */,
 				8405A4F32740469B005CEC0B /* route-1.gpx */,
 				84E04FB2273EFEE000B47496 /* route-2.gpx */,
 				84CA42E4272C2E1F0088FCDF /* Travel Travnik AR */,

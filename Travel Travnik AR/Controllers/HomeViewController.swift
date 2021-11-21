@@ -22,7 +22,7 @@ class HomeViewController: UIViewController{
         
         view.backgroundColor = .red
         let donorView = HomeMainView()
-        donorView.headerView.transparentView.isHidden = false
+        donorView.headerView.transparentView.isHidden = true
         donorView.headerView.transparentView.isUserInteractionEnabled = true
         donorView.headerView.transparentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openListOfRouteInstructions)))
         donorView.hudViewHC.rootView.delegate = self
@@ -33,15 +33,27 @@ class HomeViewController: UIViewController{
         })
         
         let locations = Bundle.main.decode([MapLocation].self, from: "maplocation.json")
-        
-        for location in locations{
-            mapLocationPoints.append(MapLocationPoints(title: location.title, locationName: location.title, discipline: location.discipline, image: UIImage(named: location.image), coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)))
-        }
-        
-        if let mapWrapper = mapWrapper {
-            mapWrapper.setMapPoints(for: mapLocationPoints, with: .includingAll, settingView: LocationPointView.self)
-        }
+        let landmarks = Bundle.main.decode(Landmark.self, from: "landmarks.json")
 
+        DispatchQueue.main.async {
+            
+            for location in locations{
+                self.mapLocationPoints.append(MapLocationPoints(title: location.title, locationName: location.title, discipline: location.discipline, image: UIImage(named: location.image), coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)))
+            }
+            
+            for landmark in landmarks{
+                self.mapLocationPoints.append(MapLocationPoints(title: landmark.title, locationName: landmark.landmarkDescription, discipline: "sculpture", image: UIImage(named: landmark.header)?.circleImage(20, size: CGSize(width: 60, height: 60)), coordinate: CLLocationCoordinate2D(latitude: landmark.coordinates.lat, longitude: landmark.coordinates.log)))
+            }
+            
+            
+            if let mapWrapper = self.mapWrapper {
+                mapWrapper.setMapPoints(for: self.mapLocationPoints, with: .includingAll, settingView: LocationPointView.self)
+                mapWrapper.mapLandmarks = landmarks
+            }
+
+            
+        }
+      
     }
     
     @objc func openListOfRouteInstructions(){
@@ -50,7 +62,7 @@ class HomeViewController: UIViewController{
             if let calculatedRoute = mapWrapper.calculatedRoute{
                 for step in calculatedRoute.steps{
                     if (step.instructions != ""){
-                        steps.append(step.instructions)
+                        steps.append("In \(step.distance.rounded()) meters, \(step.instructions)")
                     }
                 }
                 let listRouteHostVC = UIHostingController(rootView: RouteStepsListView(steps: steps))

@@ -32,6 +32,7 @@ class ARViewController: UIViewController, ARSKViewDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(openInstagram), name: UIApplication.userDidTakeScreenshotNotification, object: nil)
 
+        print("passed landmark element \(landmark)")
     }
     
     func setupLayout(){

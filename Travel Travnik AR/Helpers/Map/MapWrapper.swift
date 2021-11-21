@@ -8,6 +8,7 @@
 
 import Foundation
 import MapKit
+import SwiftUI
 
 class MapWrapper: NSObject{
     
@@ -24,6 +25,11 @@ class MapWrapper: NSObject{
     var directions = [String]()
     var routeSteps = [MKRoute.Step]()
     var debugCoordinatesArray = [String]()
+    var stepRouterCounter = 0
+    var isRegionEntered = false
+    var mapLandmarks = Landmark()
+
+
     
     // Setting up region and showing it on Map View
     // Enable location to check for current coordinates
@@ -47,7 +53,6 @@ class MapWrapper: NSObject{
     
         
         locationManager.requestAlwaysAuthorization()
-        locationManager.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
@@ -75,6 +80,8 @@ class MapWrapper: NSObject{
         mapView.register(view.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         mapView.addAnnotations(locations)
     }
+    
+   
     
     // Set Route on Map View and returns MKRoute
     // Clears all overlays, makes network request to Apple Maps API for l1 and l2
@@ -125,12 +132,23 @@ class MapWrapper: NSObject{
                                 }
                                 
                                 let region = CLCircularRegion(center: step.polyline.coordinate,
-                                                              radius: 50,
-                                                              identifier: "\(i)")
+                                                              radius: 10,
+                                                              identifier: "steps-\(i)")
                                 self.locationManager.startMonitoring(for: region)
+                                let circle = MKCircle(center: region.center, radius: region.radius)
+                                self.mapView.addOverlay(circle)
                                 locationManager.requestState(for: region)
                                 
+                                
                             }
+                            self.stepRouterCounter += 1
+                            let message = "In \(self.routeSteps[stepRouterCounter].distance) meters in, \(self.routeSteps[stepRouterCounter].instructions)"
+                            if let view = self.view {
+                                view.transparentView.isHidden = false
+                                view.transparentView.backgroundColor = .gray.withAlphaComponent(0.3)
+                                view.topLabel.text = message
+                            }
+                            
                         }
                     }
                 }
@@ -168,6 +186,26 @@ class MapWrapper: NSObject{
         return sortedArray
     }
     
+    func evaluateClosestRouteSteps(steps: [MKRoute.Step]) -> ArraySlice<(MKRoute.Step, Double)> {
+
+        var allDistance : [Double] = []
+
+        //Calculate distance of each region's center to currentLocation
+        for step in steps{
+            let distance = currentPlace!.distance(from: CLLocation(latitude: step.polyline.coordinate.latitude, longitude: step.polyline.coordinate.longitude))
+            allDistance.append(distance)
+        }
+        // a Array of Tuples
+        let distanceOfEachRegionToCurrentLocation = zip(steps, allDistance)
+
+        //sort and get closest
+        let sortedRouteSteps = distanceOfEachRegionToCurrentLocation
+            .sorted{ tuple1, tuple2 in return tuple1.1 < tuple2.1 }
+            .prefix(steps.count)
+        
+        return sortedRouteSteps
+    }
+    
     func annotationFactory(title: String, subtitle: String, placemark: MKPlacemark) -> MKPointAnnotation{
         let annotation = MKPointAnnotation()
         annotation.title = title
@@ -187,14 +225,16 @@ extension MapWrapper: MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         
         // Draw circle as overlay
-        if (overlay is MKCircle){
+       if (overlay is MKCircle){
             let renderer = MKCircleRenderer(overlay: overlay)
             renderer.fillColor = .white.withAlphaComponent(0.0)
-            renderer.strokeColor = .red
-            renderer.lineWidth = 1
+           renderer.strokeColor = .red.withAlphaComponent(1)
+            renderer.lineWidth = 2
             
             return renderer
-        }else{
+        }
+        
+        else{
             // Draw polyline renderer for route creation
             let renderer = MKPolylineRenderer(overlay: overlay)
             renderer.strokeColor = .systemBlue
