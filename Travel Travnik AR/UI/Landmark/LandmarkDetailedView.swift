@@ -22,7 +22,7 @@ struct LandmarkDetailedView: View {
                        .ignoresSafeArea(edges: .top)
                        .frame(height: 300)
 
-            CirclePhotoLandmarkView(image: Image(landmark.header))
+            CirclePhotoLandmarkView(image: Image(landmark.header.name))
                        .offset(y: -130)
                        .padding(.bottom, -130)
 
@@ -88,6 +88,6 @@ struct ARView: UIViewControllerRepresentable{
 
 struct LandmarkDetailedView_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkDetailedView(landmark: LandmarkElement(title: "", landmarkDescription: "", header: "", moreInformation: [MoreInformation(title: "lol", content: "lol")], coordinates: Coordinates(lat: 324.234, log: 34.234), moreInformationPhotos: [MoreInformationPhoto(name: "lol")]))
+        LandmarkDetailedView(landmark: LandmarkElement(header: LandmarkHeader(name: "", copyright: ""), isTranslatedByGoogle: false, title: "123", landmarkDescription: "", moreInformation: [MoreInformation(title: "lol", content: "lol")], coordinates: Coordinates(lat: 34.343, log: 233.34), sources: [LandmarkSource(link: "")], moreInformationPhotos: [MoreInformationPhoto(name: "lol", copy: "")]))
     }
 }

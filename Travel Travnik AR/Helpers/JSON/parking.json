@@ -2,18 +2,98 @@
 [
     {
         "title":"Parking",
-        "locationName:":"-",
+        "locationName:":"08-22h",
         "discipline":"Sculpture",
         "image":"parking",
-        "latitude":44.2265646,
-        "longitude":17.6695052
+        "latitude":44.22618486614974,
+        "longitude":17.669780877930204
     },
     {
         "title":"Parking",
+        "locationName:":"0-24h",
+        "discipline":"Sculpture",
+        "image":"parking",
+        "latitude":44.22594265333629,
+        "longitude":17.666140814159895
+    },
+    {
+        "title":"Parking zelene pijace",
         "locationName:":"-",
         "discipline":"Sculpture",
         "image":"parking",
-        "latitude":44.22645646,
-        "longitude":17.6455052
+        "latitude":44.2267065519013,
+        "longitude":17.666218815526406
+    },
+    {
+        "title":"Parking KŠC",
+        "locationName:":"-",
+        "discipline":"Sculpture",
+        "image":"parking",
+        "latitude":44.22589176203984,
+        "longitude":17.662506493637494
+    },
+    {
+        "title":"Parking",
+        "locationName:":"08-22h",
+        "discipline":"Sculpture",
+        "image":"parking",
+        "latitude":44.22592599133281,
+        "longitude":17.660656760616227
+    },
+    {
+        "title":"Parking",
+        "locationName:":"0-24h",
+        "discipline":"Sculpture",
+        "image":"parking",
+        "latitude":44.227163096681885,
+        "longitude":17.65796249596209
+    },
+    {
+        "title":"Parking",
+        "locationName:":"0-24h",
+        "discipline":"Sculpture",
+        "image":"parking",
+        "latitude": 44.22926415048506,
+        "longitude":17.654989929279562
+    },
+    {
+        "title":"Parking ZST",
+        "locationName:":"-",
+        "discipline":"Sculpture",
+        "image":"parking",
+        "latitude": 44.22802320679981,
+        "longitude":17.650311024918306
+    },
+    {
+        "title":"Parking",
+        "locationName:":"07-22h",
+        "discipline":"Sculpture",
+        "image":"parking",
+        "latitude": 44.22625971550419,
+        "longitude":17.64778927776256
+    },
+    {
+        "title":"Parking",
+        "locationName:":"07-22h",
+        "discipline":"Sculpture",
+        "image":"parking",
+        "latitude": 44.22625971550419,
+        "longitude":17.64778927776256
+    },
+    {
+        "title":"Parking",
+        "locationName:":"0-24h",
+        "discipline":"Sculpture",
+        "image":"parking",
+        "latitude": 44.22719589647465,
+        "longitude":17.658028178864797
+    },
+    {
+        "title":"Konfekcija Borac Parkplatz",
+        "locationName:":"0-24h",
+        "discipline":"Sculpture",
+        "image":"parking",
+        "latitude": 44.22917706757127,
+        "longitude":17.640254418791184
     },
 ]

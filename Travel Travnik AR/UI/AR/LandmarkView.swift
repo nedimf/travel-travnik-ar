@@ -15,7 +15,7 @@ struct LandmarkView: View {
                 .ignoresSafeArea(edges: .top)
                 .frame(height: 300)
             
-            CirclePhotoLandmarkView(image: Image(landmark.header))
+            CirclePhotoLandmarkView(image: Image(landmark.header.name))
                     .offset(y: -130)
                     .padding(.bottom, -130)
             
@@ -51,6 +51,6 @@ struct LandmarkView: View {
 
 struct LandmarkView_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkView(landmark: LandmarkElement(title: "", landmarkDescription: "", header: "", moreInformation: [MoreInformation(title: "lol", content: "lol")], coordinates: Coordinates(lat: 34.343, log: 233.34), moreInformationPhotos: [MoreInformationPhoto(name: "lol")]))
+        LandmarkView(landmark: LandmarkElement(header: LandmarkHeader(name: "", copyright: ""), isTranslatedByGoogle: false, title: "123", landmarkDescription: "", moreInformation: [MoreInformation(title: "lol", content: "lol")], coordinates: Coordinates(lat: 34.343, log: 233.34), sources: [LandmarkSource(link: "")], moreInformationPhotos: [MoreInformationPhoto(name: "lol", copy: "")]))
     }
 }

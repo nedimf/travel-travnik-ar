@@ -35,16 +35,21 @@ class HomeViewController: UIViewController{
         let locations = Bundle.main.decode([MapLocation].self, from: "maplocation.json")
         let landmarks = Bundle.main.decode(Landmark.self, from: "landmarks.json")
 
+        let restaurants = Bundle.main.decode(Restaurant.self, from: "restaurants.json")
+
         DispatchQueue.main.async {
             
-            for location in locations{
-                self.mapLocationPoints.append(MapLocationPoints(title: location.title, locationName: location.title, discipline: location.discipline, image: UIImage(named: location.image), coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)))
+          
+            
+            for restaurant in restaurants{
+                self.mapLocationPoints.append(MapLocationPoints(title: restaurant.title, locationName: "", discipline: "sculpture", image: UIImage(named: restaurant.image.name)?.circleImage(20, size: CGSize(width: 60, height: 60)), coordinate: CLLocationCoordinate2D(latitude: restaurant.latitude, longitude: restaurant.longitude)))
             }
+            
             
             for landmark in landmarks{
-                self.mapLocationPoints.append(MapLocationPoints(title: landmark.title, locationName: landmark.landmarkDescription, discipline: "sculpture", image: UIImage(named: landmark.header)?.circleImage(20, size: CGSize(width: 60, height: 60)), coordinate: CLLocationCoordinate2D(latitude: landmark.coordinates.lat, longitude: landmark.coordinates.log)))
+                self.mapLocationPoints.append(MapLocationPoints(title: landmark.title, locationName: landmark.landmarkDescription, discipline: "sculpture", image: UIImage(named: landmark.header.name)?.circleImage(20, size: CGSize(width: 60, height: 60)), coordinate: CLLocationCoordinate2D(latitude: landmark.coordinates.lat, longitude: landmark.coordinates.log)))
             }
-            
+                       
             
             if let mapWrapper = self.mapWrapper {
                 mapWrapper.setMapPoints(for: self.mapLocationPoints, with: .includingAll, settingView: LocationPointView.self)

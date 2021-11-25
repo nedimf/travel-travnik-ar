@@ -131,7 +131,6 @@ struct LandmarkMoreInfoView: View {
 
 struct LandmarkMoreInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkMoreInfoView(landmark: LandmarkElement(title: "title", landmarkDescription: "lol", header: "plava-voda/1", moreInformation: [MoreInformation(title: "l1", content: "")], coordinates: Coordinates(lat: 0.0, log: 0.0), moreInformationPhotos: [MoreInformationPhoto(name: "plava-voda/2")]), landmarkPosition: 0, moreInformationType: .basic)
-.previewInterfaceOrientation(.portrait)
+        LandmarkMoreInfoView(landmark: LandmarkElement(header: LandmarkHeader(name: "", copyright: ""), isTranslatedByGoogle: false, title: "123", landmarkDescription: "", moreInformation: [MoreInformation(title: "lol", content: "lol")], coordinates: Coordinates(lat: 34.343, log: 233.34), sources: [LandmarkSource(link: "")], moreInformationPhotos: [MoreInformationPhoto(name: "lol", copy: "")]))
     }
 }

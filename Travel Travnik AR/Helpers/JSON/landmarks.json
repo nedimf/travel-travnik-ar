@@ -4,7 +4,19 @@
     {
         "title":"Plava voda",
         "description:":"Plava Voda Travnik",
-        "header":"plava-voda/1",
+        "header":{
+            "name":"plava-voda/1",
+            "copyright:":""
+        },
+        "isTranslatedByGoogle": false,
+        "sources":[
+            {
+                "link":"https://visitbih.ba/en/plava-voda-in-travnik-is-a-true-attraction-austrian-prince-paid-for-coffee-with-a-ducat/"
+            },
+            {
+                "link":"https://en.wikipedia.org/wiki/Plava_Voda"
+            }
+        ],
         "coordinates":{
            "lat":44.23011981955391,
            "log":17.671531688857794
@@ -12,90 +24,492 @@
         "moreInformation":[
             {
                 "title":"",
-                "content":"Jedna od najpoznatijih turističkih atrakcija Travnika svakako je Plava voda. Nalazi se u naselju Šumeće u kojem izvire Plava voda, koja se uz potok Hendek ulijeva u rijeku Lašvu. U ljetnim mjesecima ovdje na kratki predah i uživanje u bistroj vodi, velikim ribnjacima, pratećem zelenilu, ili odmor uz piće i kafu ili nadaleko poznate ćevape navrate mnogi putnici. Stanovnicima vezirskog grada svakako je to jedno od omiljenih mjesta.\n Najzanimljivija lokacija na Plavoj vodi je Lutvina kahva. Upravo na ovom mjestu 1807. počinje, i sedam godina kasnije, završava radnja romana “Travnička hronika” nobelovca Ive Andrića. Bila je to skromna drvena kućica, gdje su se, kako se navodi u romanu, okupljali i sjedili travnički begovi, a tako je i kahva koja se danas pije na ovom mjestu postala “čuvena”",
+                "content":"Plava Voda (Blue Water) is a large spring, which creates approximately 350 meters long eponymous river, in Travnik, Bosnia and Herzegovina. It rises under Vlašić mountain, just below Travnik Castle, in the center of Old Town of Travnik."
             },
             {
-                "title":"Brojne građevine",
-                "content":"Lutvina kafana mjesto je gdje i danas navraćaju brojni kako domaći tako i strani turisti jer žele popiti čuvenu Lutvinu kahvu koja je služi u džezvi, a kraj nje fildžan, rahat lokum, cigareta i šibica. Baš onako kako je oduvijek bilo. \n Plava voda još nudi ugođaj koji je nezaboravan, a većina ljudi koji navraćaju u Travnik ne mogu, a da ne popiju kahvu i to baš na mjestu gdje je nekada, iz Andrićevih romana, Lutvo pravio kahvu. \n Ovo mjesto ima još i naziv “Rudolfova kafana” jer je 18. juna 1887. godine imala posebnog gosta. Naime, na svom putu po Bosni, gdje je vršio inspekciju konjičkih jedinica, u Lutvinoj kafani kraće vrijeme zadržao se austrijski nadvojvoda i austrougarski prijestolonasljednik Rudolf Kari Franz Josef, jedinac cara Franje Josipa i Elizabete Bavarske.",
+                "title":"Geography",
+                "content":"The Plava Voda springs out of a large slit at the bottom of a mountainside, which is situated within the narrow depression in Travnik's Old Town (Ćaršija) neighborhood, in the heart of the city. Immediately above the wellspring rises an old Travnik's citadel, the Travnik Castle. The river runs through part of an Old Town Travnik, and after roughly 300 meters it reaches and spills into the Lašva river near the eastern town's gate."
             },
             {
-                "title":"Muzej na otvorenom",
-                "content":"Tako ovaj lijepi i atraktivni dio Travnika više liči na neki muzej na otvorenom prostoru, nego na mjesto u kojem obični ljudi žive svoj život podsjećajući se da je njihov grad oko 150 godina bio glavni grad Bosne i u kojem je u tom periodu stolovalo 77 vezira, od kojih su peterica zauvijek ostala u svojim turbetima u Travniku da barem navode na razmišljanje o prolaznosti slave i života…",
+                "title":"",
+                "content":"Wellspring of Plava Voda is a city's main source of potable water. It is also one of the main attractions of Travnik's rich natural and cultural-historic heritage. Areal around the wellspring, comprising Old Town is declared National Monument of Bosnia and Herzegovina on 26 April 2013.The Plava Voda runs through part of an Old Town Travnik stacked with cafe-bars and restaurants, frequently visited by locals and tourists alike,recently, fear have been growing in Travnik that spring's discharge could be significantly depleted, while natural and cultural ambient of entire areal spoiled, as plans for further development of water utilization have gained political backings at local and state levels"
             },
             {
-                "title":"Opis enterijera",
-                "content":"Na Plavoj vodi su do novembra 1906. brojni izvori i potočići danonoćno pokretali više mlinova, vodenica i drvenih stupa, koje su tucale hrastovu koru potrebnu za štovljenje kože u brojnim travničkim kožarama ili tabhanama, od kojih su ostali samo temelji nizvodno pored Lašve. \n Češka firma Franjo Krizik je izgradila te godine branu na akumulacionom jezercetu iz kojeg je sakupljana voda da bi pokrenula turbinu na prvoj hidroelektrani u neposrednoj blizini. Ova hidroelektrana je dugo proizvodila struju sa kojom su se Travničani susreli 1906. prije nego mnogo gradova na području bivše Jugoslavije.",
-                
+                "title":"Outdoor Museum",
+                "content":"Thus, this beautiful and attractive part of Travnik looks more like an open-air museum than a place where ordinary people live their lives reminding themselves that their city was the capital of Bosnia for 150 years and where 77 viziers were seated. Five of them remained forever in their mausoleums in Travnik, to trigger us to think about the passing of glory and life … Till November 1906, many streams and watercourses put in function numerous watermills and wooden pillars on Plava Voda. They crunched the oak bark necessary for the skin to be processed in numerous tanneries, of which only the foundations remained downstream of Lašva. The Czech company Franjo Krizik built a dam that year, on the accumulation pond from which water was collected to launch the turbine at the first hydroelectric plant in the immediate vicinity. This hydroelectric power plant has long produced an electricity that Travnik citizens had in 1906, before many other cities in the former Yugoslavia."
             }
         ],
         "moreInformationPhotos":[
             {
-                "name":"plava-voda/1"
+                "name":"plava-voda/1",
+                "copy":"https://static.klix.ba/media/images/vijesti/200615065.7_xxl.jpg?v=1"
+                
             },
             {
-                "name":"plava-voda/2"
+                "name":"plava-voda/2",
+                "copy":"https://static.klix.ba/media/images/vijesti/200615065.6_xxl.jpg?v=1"
             },
             {
-                "name":"plava-voda/3"
+                "name":"plava-voda/3",
+                "copy":"https://static.klix.ba/media/images/vijesti/200615065.2_xxl.jpg?v=1"
             },
             {
-                "name":"plava-voda/4"
+                "name":"plava-voda/4",
+                "copy":"https://static.klix.ba/media/images/vijesti/200615065.1_xxl.jpg?v=1"
             },
             {
-                "name":"plava-voda/5"
+                "name":"plava-voda/5",
+                "copy":"https://static.klix.ba/media/images/vijesti/200615065.3_xxl.jpg?v=1"
             },
             {
-                "name":"plava-voda/6"
+                "name":"plava-voda/6",
+                "copy":"https://static.klix.ba/media/images/vijesti/200615065.8_xxl.jpg?v=1"
             }
         ]
     },
     {
-        "title":"Šarena džamija",
-        "description:":"Sulejmanija Šarena džamija Travnik",
-        "header":"sarena-dzamija/header",
+        "title":"Šarena Mosque",
+        "description:":"Sulejmanija Šarena Mosque Travnik",
+        "header":{
+            "name":"sarena-dzamija/1",
+            "copyright:":""
+        },
+        "isTranslatedByGoogle": false,
+        "sources":[
+            {
+                "link":"https://en.wikipedia.org/wiki/%C5%A0arena_Mosque"
+            }
+        ],
         "coordinates":{
            "lat":44.22660458074596,
            "log":17.670025961941477
           },
         "moreInformation":[
             {
-                "title":"",
-                "content":"Na mjestu Šarene džamije je još krajem XVI stoljeća podigao svoju džamiju neki Gazi-aga, po kojem je ona sve do 1757. godine bila poznata kao Gazi-agina džamija. Nije sačuvan opis Gazi-agine džamije. Ova prva džamija je imala i harem koji je vremenom potiskivan i stiješnjen uz samu džamiju. 1757. godine je bosanski valija Sopa Salan Ćamil-Ahmed-paša iz temelja obnovio Gazi-aginu džamiju, sagradivši pod njom bezistan sa dvadeset i sedam dućana, pa se ona od tada nazvala Ćamilija džamija. \nIz vakufname Ahmed-pašine, tj. vakufname Ćamilija džamije iz 1757. godine, saznaje se samo da je Gazi-agina džamija te godine bila u potpuno urušenom stanju, te da ju je nešto prije 3. jula 1757. godine obnovio dobrotvor Ahmed-paša.",
+                "title":"History",
+                "content":"The Šarena Džamija was originally built in 1438.The architect behind the Šarena Džamija was Isak Bey.Most mosques of the time had sultans, beys or pashas financing their constructions, but the Šarena Džamija, however, was financed by two sisters from Tetovo. As with many mosques, a hammam was built nearby across the river. The site used to include an Inn as well as a bathhouse on the other side of the river. The current courtyard of the Šarena Džamija is filled with many flowers, a fountain, and a Türbe. The octagonal \"türbe\" houses the resting places of Hurshida and Mensure, the two sisters who financed the construction of the mosque in 1438. Abdurrahman Pasha, a great enthusiast of art who was fond of Tetovo, reconstructed the Šarena Džamija in 1833. In 1991, the Islamic Community in Tetovo built walls around the mosque in the typical classical Ottoman style.In 2010, a renovation of the exterior paintings was completed and, with a €94,700 grant from the United States State Department, the façade was reconstructed and preserved in 2011."
             },
+            {
+                "title":"Architecture",
+                "content":"Unlike the traditional Ottoman ceramic tile decorations in mosques, the Šarena Džamija has bright floral paintings.More than 30,000 eggs were used to prepare the paint and glaze that went into the elaborate decorations.Another major difference between the Šarena Džamija and other Ottoman mosques is that the Šarena Džamija does not have a distinctive exterior dome,as the architecture of the mosques styles the early Constantinople Ottoman Architecture. The distinguishing feature of the mosque is its painted decorations. Abdurrahman Pasha commissioned, for this purpose, masters from Debar who painted the ornamentation with oil paints. In addition to the geometric and floral ornamentation, landscape is also encountered. Among the pictorial decorations, especially attractive is the depiction of Mecca, a rare and perhaps the only example of the illustration of the shrine of the Islamic prophet, Muhammad, in southeast Europe."
+            },
+            {
+                "title":"Decorations",
+                "content":"It owes its current name to its rich interior and exterior decoration made up of colorful plant motifs (cypress, pruniers, lily flowers, tulips, lilac, stylized buds, etc.), clearly visible on the upper sides of the façade. These paintings - the renovation of which was due to be completed in early 2019 - are now exceptional. However, they were the standard of Ottoman mosques until the beginning of the nineteenth century. What is quite astonishing here is that the current decoration dates back to the reconstruction of the building after a fire in 1815. And also that she survived the flames that ravaged the rest of the city in 1903. Today it is one of the very few \"colorful\" mosques of the Balkans, with the mosque Et Hem Bey of Tirana (Albania) and the painted mosque of Tetovo (Ref. of Macedonia)"
+            }
+        ],
+        "moreInformationPhotos":[
+            {
+                "name":"sarena-dzamija/1",
+                "copy":"https://static.klix.ba/media/images/vijesti/160610081.2_xxl.jpg?v=1"
+            },
+            {
+                "name":"sarena-dzamija/2",
+                "copy":"https://static.klix.ba/media/images/vijesti/160610081.3_xxl.jpg?v=1"
+            },
+            {
+                "name":"sarena-dzamija/3",
+                "copy":"https://static.klix.ba/media/images/vijesti/160610081.4_xxl.jpg?v=1"
+            },
+            {
+                "name":"sarena-dzamija/4",
+                "copy":"https://vijesti.ba/fajlovi/news_image/sarena-dzamija-travnik-16_5cb1f90d3ffbd.jpg"
+            },
+            {
+                "name":"sarena-dzamija/5",
+                "copy":"https://vijesti.ba/fajlovi/news_image/sarena-dzamija-travnik-10_5cb1f90d3fd4e.jpg"
+            },
+            {
+                "name":"sarena-dzamija/6",
+                "copy":"https://vijesti.ba/fajlovi/news_image/sarena-dzamija-travnik-06_5cb1f90d3fb8f.jpg"
+            }
+        ]
+    },
+    {
+        "title":"Zavičajni muzej Travnik",
+        "description:":"09:00 - 15:00 workdays / 10:00 - 14:00",
+        "header":{
+            "name":"zavicajni-muzej/1",
+            "copyright:":""
+        },
+        "isTranslatedByGoogle": false,
+        "sources":[
+            {
+                "link":"http://muzejtravnik.ba/en/zavicajni-muzej-travnik/"
+            }
+        ],
+        "coordinates":{
+           "lat":44.226192276188044,
+           "log":17.66669353067995
+          },
+        "moreInformation":[
             {
                 "title":"",
-                "content":"Vakufnama sadrži podatke o tome da je džamija iz temelja obnovljena, osim kamene munare, i da je tada temeljito opravljen i vodovod. Tom prilikom je uz džamiju izgrađena i česma sa četiri lule i u nju dovedena voda iz već postojećeg vodovoda. \n Ova vakufnama, pored drugih podataka, sadrži i opis nove građevine u kome se kaže da je džamija počivala na kratkim kamenim stupovima, te da je pod džamijom bezistan sa dva ulaza i deset dućana unutar njega i sedamdeset poredanih oko bezistana, iza arkada džamije. \n Ovaj opis u potpunosti odgovara sadašanjem stanju objekta, pa je vjerovatno da je ovaj dio objekta preživio požar koji je 1815. godine zahvatio Donju čaršiju, a sa njom i džamiju.",
+                "content":"The Regional Museum of Travnik was founded in 1950. Since 1972 is has been located in a building originally constructed as a healthcare facility in 1928 from the Rockefeller Foundation funds. The permanent exhibition in this building was opened to visitors in 1975.",
             },
             {
-                "title":"Obnova nakon požara",
-                "content":"Nakon ovog požara iz 1815. godine, džamiju je temeljito obnovio Skopljak Sulejman-paša, po kojem se džamija od tada naziva Sulejmanijom. Ovaj vezir je stolovao u Travniku od 27. oktobra 1815. do 23. januara 1818. godine.Pored obnove ove džamije, on je sagradio turbe nad mezarom bosanskog vezira Mustafe-paše Jenišeherlije u dvorištu Kukavičine medrese u Gornjoj čaršiji, te obnovio sahat-kulu kod Hadži Ali-begove džamije.\n Za održavanje ovih objekata ostavio je bogat, vezirski vakuf, a samoj džamiji je poklonio i ostavio na čuvanje visoko tursko odlikovanje koje je on primio za vojne zasluge. O dešavanjima u vezi sa Šarenom džamijom od 1815. godine do danas se malo zna. Iz historijskih podataka zaključuje se da je tokom bombardiranja Travnika u II svjetskom ratu porušen zapadni ugao objekta i već 1945. godine je on obnovljen.",
+                "title":"",
+                "content":"The Museum’s holdings comprise approximately 80,000 exhibits. Today, the Regional Museum of Travnik is the only regional museum in the area of Central Bosnia Canton."
             },
             {
-                "title":"Opis enterijera",
-                "content":"Enterijer Sulejmanije (šarene) džamije je posebno bogato dekorisan. Naročito se ističu lijepo slikane ornamentalne partije nad mihrabom i lučnim poljima nad prozorima. Na galeriji iznad prozora u kaligraf­ski izvedenom arapskom pismu ispisana su imena najbližih ashaba Muhammeda, s.a.v.s. Živopisno je ukrašena kaseti­rana tavanica i drveni stubovi koji nose galeriju i stropnu konstrukciju. Munara se nalazi na lijevoj umjesto na desnoj strani džamije kako je, inače, pravilo kod gradnje džamija. Pretpostavlja se da je munara starija od džamije i da potiče od prethodne Ćamilije.\n U periodu prije 1992. godine Šarena džamija je restaurirana, bezistan stavljen u funkciju i rekonstruisan nekadašnji zanatsko-trgovinski centar oko nje.",
+                "title":"Working hours",
+                "content":"Permanent exhibition is open for visitors on weekdays from 9.00 to 15.00\nSaturdays and Sundays from 10.00 to 14.00\nMuseum curators-pedagogues provide expert explanations for group visits to the Regional Museum of Travnik"
+            },
+            {
+                "title":"Admission fees",
+                "content":"Adults: 3.00 KM\nGroup visits (minimum 20 persons): 2.00 KM\nPupils of elementary and secondary schools, students and pensioners: 1.50 KM\nGroup visits (minimum 20 persons) for pupils, students and pensioners: 1.00 KM"
                 
             }
         ],
         "moreInformationPhotos":[
             {
-                "name":"sarena-dzamija/1"
+                "name":"zavicajni-muzej/1",
+                "copy":"https://www.travnicki.info/wp-content/uploads/2021/04/Muzej_Travnik.jpg"
             },
             {
-                "name":"sarena-dzamija/2"
+                "name":"zavicajni-muzej/2",
+                "copy":"https://visitmycountry.net/bosnia_herzegovina/bh/images/stories/muzeji/travnik/zavicajni_muzej/photos/zavicajni_muzej_travnik_02.jpg"
             },
             {
-                "name":"sarena-dzamija/3"
+                "name":"zavicajni-muzej/3",
+                "copy":"https://visitmycountry.net/bosnia_herzegovina/bh/images/stories/muzeji/travnik/zavicajni_muzej/photos/zavicajni_muzej_travnik_05.jpg"
             },
             {
-                "name":"sarena-dzamija/4"
+                "name":"zavicajni-muzej/4",
+                "copy":"https://visitmycountry.net/bosnia_herzegovina/bh/images/stories/muzeji/travnik/zavicajni_muzej/photos/zavicajni_muzej_travnik_03.jpg"
             },
             {
-                "name":"sarena-dzamija/5"
+                "name":"zavicajni-muzej/5",
+                "copy":"https://visitmycountry.net/bosnia_herzegovina/bh/images/stories/muzeji/travnik/zavicajni_muzej/photos/zavicajni_muzej_travnik_06.jpg"
             },
             {
-                "name":"sarena-dzamija/6"
+                "name":"zavicajni-muzej/6",
+                "copy":"https://visitmycountry.net/bosnia_herzegovina/bh/images/stories/muzeji/travnik/zavicajni_muzej/photos/zavicajni_muzej_travnik_07.jpg"
             }
         ]
     },
-]
 
+    {
+        "title":"Memorial Museum House of Ivo Andrić",
+        "description:":"Ivo Andrić‘s birth house Travnik",
+        "header":{
+            "name":"kuca-ive-andrica/1",
+            "copyright:":""
+        },
+        "isTranslatedByGoogle": false,
+        "sources":[
+            {
+                "link":"http://feelbosnia.com/what_to_see_bosnia/attraction/ivo_andrics_birth_house_bosnia/"
+            }
+        ],
+        "coordinates":{
+           "lat":44.226192276188044,
+           "log":17.66669353067995
+          },
+        "moreInformation":[
+            {
+                "title":"",
+                "content":"The Nobel Prize winner Ivo Andrić was born on 9th October in 1892 in Zenjak, a Travnik neighborhood. As an addition of the Museum Travnik on 30th August in 1974 was opened the reconstructed house of Andrić with permanent exhibition on his life and on his literary work.On the day of the death of Ivo Andric, on 13th March 1975, the Museum of Travnik proposed to the Municipal Assembly of Travnik that the Memorial Museum to be renamed Memorial Museum \"House of Ivo Andrić\". Under this name is even today, and the interest of tourists and visitors is increasing.",
+            },
+            {
+                "title":"",
+                "content":"Visitors can see the birth room with furnitures, a library with works in various languages, a room dedicated to the novel \"Travnička hronika\" and in the corridors are placed copies of drawings of Zuka Dzumhur as an illustration for a short story \"Priča o vezirom slonu\" and the photographs taken during the last visit of Andrić to Travnik.",
+            },
+            {
+                "title":"Words of Memorial Museum curator",
+                "content":"\"If we look at the book of impressions, then we see that there are signatures of visitors from all continents and almost from all European countries. This tells us that interest in Ivo Andrić as a writer, and also for his work is not decrasing, but is steadily increasing. This is proven by the increasing number of visitors who come to the Memorial Museum\", says Enes Škrgo, the curator of the Memorial Museum."
+            },
+            {
+                "title":"Interesting fact",
+                "content":"When Andrić was two years old, his father Antun died. Because his mother Katarina was too poor to support him, he was raised by his mother's family in the town of Višegrad on the river Drina in eastern Bosnia, where he saw the 16th-century Mehmed Paša Sokolović Bridge, later made famous in his novel The Bridge on the Drina (Na Drini ćuprija).",
+            }
+        ],
+        "moreInformationPhotos":[
+            {
+                "name":"kuca-ive-andrica/1",
+                "copy":"https://upload.wikimedia.org/wikipedia/commons/6/6d/Rodna_ku%C4%87a_Ive_Andri%C4%87a_u_Travniku_0.jpg"
+            },
+            {
+                "name":"kuca-ive-andrica/2",
+                "copy":"https://static.klix.ba/media/images/vijesti/150313013.17_mn.jpg?v=1"
+            },
+            {
+                "name":"kuca-ive-andrica/3",
+                "copy":"https://static.klix.ba/media/images/vijesti/150313013.13_xl.jpg?v=1"
+            },
+            {
+                "name":"kuca-ive-andrica/4",
+                "copy":"https://static.klix.ba/media/images/vijesti/150313013.14_xl.jpg?v=1"
+            },
+            {
+                "name":"kuca-ive-andrica/5",
+                "copy":"https://static.klix.ba/media/images/vijesti/150313013.8_mn.jpg?v=1"
+            },
+            {
+                "name":"kuca-ive-andrica/6",
+                "copy":"https://static.klix.ba/media/images/vijesti/150313013.9_mn.jpg?v=1"
+            }
+        ]
+    },
+    {
+        "title":"Medieval Fortress",
+        "description:":"Medieval Fortress Travnik",
+        "header":{
+            "name":"stara-tvrdjava/1",
+            "copyright:":""
+        },
+        "isTranslatedByGoogle": false,
+        "sources":[
+            {
+                "link":"http://muzejtravnik.ba/en/tvrdava-stari-grad/"
+            }
+        ],
+        "coordinates":{
+           "lat":44.23035414377313,
+           "log":17.6707165
+          },
+        "moreInformation":[
+            {
+                "title":"",
+                "content":"On the ground floor of the section with its sixteent angles is situated an ethnographic exhibition named “The Folk Culture of the Travnik Area” The exhibition has been adjusted to the space in such a way that on the larger wall spaces the photograph boards are a continuation of the wall cabinets. The wall spaces between the ancient crenels (loopholes) have been used for the wall cabinets where the traditional clothing of all three ethnicities of this area is on display.",
+            },
+            {
+                "title":"",
+                "content":"In the five ground cabinets there are tools and utensils that the villagers used for different needs in their daily life: construction works and food-making, clothing, crockery, stock farming and food production, especially milk – for example the traditional Travnik and Vlašić cheeses. The copies of the photographs in the museum library displayed on the boards above the cabinets show typical examples of traditional engineering, and those of village houses of Central Bosnia (“dimalučara”, “dvobojka”, “čardaklija”), as well as field work (sowing, threshing), sheep grazing etc.",
+            },
+            {
+                "title":"",
+                "content":"A special segment is dedicated to the millennia-old way of making earthenware at the hand wheel, still practiced by Refik Delić, the last earthenware maker in the village of Pulac near Travnik. In the carved wooden chest woven towels for everyday use are exhibitede, but also for the home decoration for newlyweds. The two smaller cabinets contain wooden objects decorated with motifs of popular ornamentation (distaff, manger, pincushions, earmarks etc.) used for daily chores, while some of the objects have a ritualistic function as well and testify of religious and spiritual life and widespread folk beliefs."
+            },
+            {
+                "title":"",
+                "content":"A special part of the exhibition is dedicated to the traditional village clothing of all three ethnicities living in this area. The clothes are represented in pairs, one male and one female. Croatian and Serbian clothing kept its typical elements of the Dinara region (male and female embroidered blouses, woven wool aprons, embroidered head scarves, doublets made of cloth etc.). In the Bosniak village clothing there is a dominant influence of the oriental urban wear (“dimije”, “ćereće” – thin cotton cloth used for shirts, waistcoats, “ječerme”, headwear like “jemenije” and fezzes, slacks and dolmans etc.)",
+            }
+        ],
+        "moreInformationPhotos":[
+            {
+                "name":"stara-tvrdjava/1",
+                "copy":"https://muzejtravnik.ba/wp-content/uploads/2014/09/dscn0675.jpg"
+            },
+            {
+                "name":"stara-tvrdjava/2",
+                "copy":"https://muzejtravnik.ba/wp-content/uploads/2014/09/img_1633.jpg"
+            },
+            {
+                "name":"stara-tvrdjava/3",
+                "copy":"https://muzejtravnik.ba/wp-content/uploads/2014/09/img_2143.jpg"
+            },
+            {
+                "name":"stara-tvrdjava/4",
+                "copy":"https://muzejtravnik.ba/wp-content/uploads/2014/09/img_2149.jpg"
+            },
+            {
+                "name":"stara-tvrdjava/5",
+                "copy":"https://travnik.ba/wp-content/uploads/2020/03/travnik-stari-grad.jpg"
+            },
+            {
+                "name":"stara-tvrdjava/6",
+                "copy":"https://www.bosnopis.ba/wp-content/uploads/2019/03/DSC_0068.jpg"
+            }
+        ]
+    },
+    {
+        "title":"The Steam Train \"Ćiro\"",
+        "description:":"The Steam Train \"Ćiro\" Travnik",
+        "header":{
+            "name":"lokomotiva-ciro/1",
+            "copyright:":""
+        },
+        "isTranslatedByGoogle": false,
+        "sources":[
+            {
+                "link":"http://muzejtravnik.ba/en/parni-voz-ciro/"
+            }
+        ],
+        "coordinates":{
+           "lat":44.22573276447471,
+           "log":17.66645778041923
+          },
+        "moreInformation":[
+            {
+                "title":"",
+                "content":"Steam train “Ćiro” – serial number “97-036” was manufactured in 1893, in the Floridsdorf factory near Vienna. From 38 steam trains built, only four are still preserved. In addition to the Travnik railway, purposely conceived according to the “Abot system” in order to overcome the steep curve of the Komar road (via a system of cogwheel rods built between railroad tracks and cogwheels) another three examples of the system have been preserved in museums in Munich, Ljubljana, and in a private museum in Freuach (Austria).",
+            },
+            {
+                "title":"",
+                "content":"In 2012 a project of saving, restoration and conservation of the steam train nicknamed “Ćiro” was accomplished. The train consists of a steam locomotive and two wagons, an open roof and a standard one. Restoration was done in a specialized workshop in Banovići. After its return to Travnik, “Ćiro”, instead of being placed at the old train station, was instead placed in the Museum grounds, in order to have a proper safekeeping for this rare monument of technical heritage.",
+            },
+        ],
+        "moreInformationPhotos":[
+            {
+                "name":"lokomotiva-ciro/1",
+                "copy":"http://muzejtravnik.ba/images/stories/Ciro/41.jpg"
+            },
+            {
+                "name":"lokomotiva-ciro/2",
+                "copy":"http://muzejtravnik.ba/wp-content/uploads/2014/09/Ciro_2.jpg"
+            },
+            {
+                "name":"lokomotiva-ciro/3",
+                "copy":"http://muzejtravnik.ba/images/stories/slike/ciro_579.jpg"
+            },
+            {
+                "name":"lokomotiva-ciro/4",
+                "copy":"http://muzejtravnik.ba/wp-content/uploads/2014/09/PICT0002.jpg"
+            },
+            {
+                "name":"lokomotiva-ciro/5",
+                "copy":"http://muzejtravnik.ba/images/stories/Ciro/img_5701.jpg"
+            },
+            {
+                "name":"lokomotiva-ciro/6",
+                "copy":"http://muzejtravnik.ba/wp-content/uploads/2014/09/dscn0457yu.jpg"
+            }
+        ]
+    },
+    {
+        "title":"Hadži-Alibegova mosque",
+        "description:":"Hadži-Alibegova mosque Travnik",
+        "header":{
+            "name":"hadzi-alibegova-dzamija/1",
+            "copyright:":""
+        },
+        "isTranslatedByGoogle": true,
+        "sources":[
+            {
+                "link":"https://bs.wikipedia.org/wiki/Had%C5%BEi-Alibegova_d%C5%BEamija"
+            }
+        ],
+        "coordinates":{
+           "lat":44.22547750126837,
+           "log":17.66840691710807
+          },
+        "moreInformation":[
+            {
+                "title":"History",
+                "content":"Vizier Mehmed-pasha Kukavica came to Travnik with the task of calming the riots in Bosnia and Montenegro. The vizier was a Bosniak originally from the Foča area. He built the Upper Bazaar in Travnik. In addition to the bezistan, madrasa, fountain, aqueduct from Bashbunar, mekteb, public spa, probably a clock tower, he built the first mosque on the site of today's mosque in the Upper Bazaar known as the Mosque in the Upper Bazaar, based on an inscription on a stone slab in To the Homeland Museum in Travnik, it was built in 1757/58. years. The mosque of Mehmed-pasha Kukavica (later called Haji Ali-beg) was built at the same time as the other bazaar in the Lower Bazaar, built by the vizier Sopa Salan Ahmed-pasha in 1757 on the foundations of the Gazi-aga mosque. It is possible that both mosques were built by the same builder, because they have many of the same architectural elements and details.",
+            },
+            {
+                "title":"",
+                "content":"The original mosque built by Mehmed-pasha Kukavica burned down in a fire in 1856, as did the Upper Bazaar and the endowment of Mehmed-pasha Kukavica. The remaining walls and minarets were burnt down and restored in 1865 by the Travnik beg and landowner Hadži Ali-beg Hasanpašić, and since then it has been called the Hadži Ali-beg mosque. In addition to the mosque, he renovated the madrasa and the clock tower, and endowed a huge fortune to support those facilities. The vakuf of the Hadži Ali-beg mosque was the largest vakuf of the Travnik district and had 51 buildings, ie 25% of the total value of the vakuf property of the independent vakufs of the Travnik district.",
+            },
+            {
+                "title":"Description",
+                "content":"The mosque consists of an entrance porch, a main prayer area and a stone minaret located on the northwest entrance façade to the right of the portal (which is unusual for mosques built in Bosnia and Herzegovina from that period). The main prayer area and porch are covered by a common hipped roof. The mosque has a rectangular base, external dimensions: width 15.20 m, length of one longitudinal side is 18.20 m. The internal dimensions of the basic prayer space of the mosque are 16.62 x 13.74 m. The mosque has massive stone walls made of Travnik tufa about 75 cm thick."
+            },
+        ],
+        "moreInformationPhotos":[
+            {
+                "name":"hadzi-alibegova-dzamija/1",
+                "copy":"https://furaj.ba/wp-content/uploads/2017/07/111.jpg"
+            },
+            {
+                "name":"hadzi-alibegova-dzamija/2",
+                "copy":"https://media-cdn.tripadvisor.com/media/photo-m/1280/13/7c/ec/de/hadzi-ali-begova-mosque.jpg"
+            },
+            {
+                "name":"hadzi-alibegova-dzamija/3",
+                "copy":"https://media-cdn.tripadvisor.com/media/photo-m/1280/13/7c/ec/e0/hadzi-ali-begova-mosque.jpg"
+            },
+            {
+                "name":"hadzi-alibegova-dzamija/4",
+                "copy":"https://mesdzid.ba/wp-content/uploads/2016/08/H.Ali-begova.jpg"
+            },
+        ]
+    },
+
+    {
+        "title":"Travnik clock tower in the Upper Bazaar",
+        "description:":"",
+        "header":{
+            "name":"sahat-kula/1",
+            "copyright:":""
+        },
+        "isTranslatedByGoogle": true,
+        "sources":[
+            {
+                "link":"https://bs.wikipedia.org/wiki/Travni%C4%8Dka_sahat-kula_u_Gornjoj_%C4%8Dar%C5%A1iji"
+            }
+        ],
+        "coordinates":{
+           "lat":44.22729821193074,
+           "log":17.670352755702243
+          },
+        "moreInformation":[
+            {
+                "title":"",
+                "content":"The clock tower was renovated in 1817 by Sulejman-pasha Skopljak. Then a four-pitched wooden roof was added to the pillars, under which there is space to accommodate the bells. On that occasion, a clock with four mines and a bell ringing for full hours and quarters was ordered through the Austrian consul Von Simschen. After a large fire, in 1856 the damaged clock tower was thoroughly rebuilt by Hadži Ali-beg Hasanpašić. The tower collapsed14. June 1973, so it was completely reconstructed in 1977 on the basis of a reconstruction project done at the then Republic Institute for the Protection of Cultural Monuments. It is identical to the original in all elements except for the thickness and type of wall. This time the tower was \"built\" in reinforced concrete with a tufa coating.The base of the clock tower is a square base with sides of 4.10 x 4.20 m. The height of the building is about 18.5 m.",
+            },
+        ],
+        "moreInformationPhotos":[
+            {
+                "name":"sahat-kula/1",
+                "copy":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Sahat_Kule_02.JPG/1200px-Sahat_Kule_02.JPG"
+            },
+            {
+                "name":"sahat-kula/2",
+                "copy":"https://furaj.ba/wp-content/uploads/2017/06/7-2.jpg"
+            },
+            {
+                "name":"sahat-kula/3",
+                "copy":"fmks.gov.ba/download/zzs/1957/2-1957.pdf"
+            },
+            {
+                "name":"sahat-kula/4",
+                "copy":"https://static.klix.ba/media/images/vijesti/180504110.4_xxl.jpg?v=1"
+            },
+            {
+                "name":"sahat-kula/5",
+                "copy":"https://static.klix.ba/media/images/vijesti/180504110.9_xxl.jpg?v=1"
+            },
+            {
+                "name":"sahat-kula/6",
+                "copy":"https://static.klix.ba/media/images/vijesti/180504110.8_xxl.jpg?v=1"
+            },
+        ]
+    },
+
+    {
+        "title":"Travnik clock tower on Musali",
+        "description:":"Travnik clock tower on Musali",
+        "header":{
+            "name":"sahat-kula-musali/1",
+            "copyright:":""
+        },
+        "isTranslatedByGoogle": true,
+        "sources":[
+            {
+                "link":"https://bs.wikipedia.org/wiki/Travni%C4%8Dka_sahat-kula_na_Musali"
+            }
+        ],
+        "coordinates":{
+           "lat":44.226192276188044,
+           "log":17.66669353067995
+          },
+        "moreInformation":[
+            {
+                "title":"History",
+                "content":"Construction of clock towers in the Ottoman Empire began in the mid-16th century. century. Urban development, but also the need to perform five waqat prayers - prayers that Islamic believers are obliged to perform at certain times of the day prescribed by the Qur'an, have conditioned the spread of clock towers. In Bosnia and Herzegovina, clock towers appear at the end of the 16th century. century and the first was built in Banja Luka, and during the XVII. and XVIII. century and in many other cities.",
+            },
+            {
+                "title":"",
+                "content":"It is not known exactly when this clock tower was built and two plaques with inscriptions about the renovation have been preserved on it. In 1811, the tower was restored by the Bosnian vizier Hilmi Ibrahim-pasha, and in 1815, Hazin Ibrahim-pasha provided funds for its repair. Old drawings and engravings of this part of Travnik show that the clock tower was rebuilt between 1878 and 1892. In 1903, a wooden roof burned down in a fire, after which the clock tower was given its present appearance with a thorough reconstruction. From 1992-1995 Musala was damaged during the shelling of Travnik from Vlašić, and after the war, its roof with the attic and the part where the clock mechanisms were located were renovated again.",
+            },
+            {
+                "title":"Description",
+                "content":"The clock tower on Musala is built of stone tufa, and the foundations are well executed and cut into the travertine plateau of the Musala glade itself. The square base of this building measures 3.6X3.6 m, and the thickness of the walls in the entrance part is between 60 and 90 cm. The height is about 19.5 m. The clock tower is prismatic in shape where the walls taper upwards and end in a four-pitched roof in the shape of a pyramid. The wooden steep staircase inside the tower is two-legged with small landings at each change of climbing direction."
+            },
+        ],
+        "moreInformationPhotos":[
+            {
+                "name":"sahat-kula-musali/1",
+                "copy":"https://upload.wikimedia.org/wikipedia/commons/e/ea/Sahat_Kule_01.JPG"
+            },
+            {
+                "name":"sahat-kula-musali/2",
+                "copy":"https://i.ytimg.com/vi/sI_JzggxSw0/maxresdefault.jpg"
+            },
+        ]
+    },
+    
+]

@@ -18,7 +18,7 @@ struct RestaurantRowView: View {
                 .ignoresSafeArea(edges: .top)
                 .frame(height: 300)
             
-            CirclePhotoLandmarkView(image: Image(restaurant.image))
+            CirclePhotoLandmarkView(image: Image(restaurant.image.name))
                 .offset(y: -130)
                 .padding(.bottom, -130)
             
@@ -57,6 +57,6 @@ struct RestaurantRowView: View {
 
 struct RestaurantRowView_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantRowView(restaurant: RestaurantElement(title: "", about: "", image: "", latitude: 0.0, longitude: 0.0, stars: 1))
+        RestaurantRowView(restaurant: RestaurantElement(googleLink: "", title: "", about: "", image: RestaurantImage(name: "", copy: ""), latitude: 0.0, longitude: 0.0, stars: 1))
     }
 }

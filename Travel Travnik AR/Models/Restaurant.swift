@@ -10,7 +10,9 @@ import CoreLocation
 // MARK: - RestaurantElement
 struct RestaurantElement: Codable {
     let id = UUID()
-    let title, about, image: String
+    var googleLink: String?=nil
+    let title, about: String
+    let image: RestaurantImage
     let latitude, longitude: Double
     let stars: Int
 
@@ -18,8 +20,14 @@ struct RestaurantElement: Codable {
         case title
         case about = "about:"
         case stars
+        case googleLink
         case image, latitude, longitude
     }
+}
+
+struct RestaurantImage: Codable{
+    let name:String
+    let copy:String
 }
 
 typealias Restaurant = [RestaurantElement]

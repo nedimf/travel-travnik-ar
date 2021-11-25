@@ -5,19 +5,23 @@
 
 
 import Foundation
-import UIKit
 
 // MARK: - LandmarkElement
 struct LandmarkElement: Codable {
     let id = UUID()
-    let title, landmarkDescription, header: String
+    let header: LandmarkHeader
+    let isTranslatedByGoogle: Bool
+    let title, landmarkDescription: String
     let moreInformation: [MoreInformation]
     let coordinates: Coordinates
+    let sources: [LandmarkSource]
     let moreInformationPhotos: [MoreInformationPhoto]
     
 
     enum CodingKeys: String, CodingKey {
          case title
+         case sources
+         case isTranslatedByGoogle
          case landmarkDescription = "description:"
          case header, coordinates, moreInformation, moreInformationPhotos
      }
@@ -28,6 +32,15 @@ struct MoreInformation: Codable {
     let title, content: String
 }
 
+struct LandmarkSource: Codable{
+    let link: String
+}
+
+struct LandmarkHeader: Codable{
+    let name: String
+    var copyright: String?=nil
+}
+
 // MARK: - Coordinates
 struct Coordinates: Codable {
     let lat, log: Double
@@ -36,6 +49,7 @@ struct Coordinates: Codable {
 // MARK: - MoreInformationPhoto
 struct MoreInformationPhoto: Codable {
     let name: String
+    let copy: String
 }
 
 typealias Landmark = [LandmarkElement]

@@ -14,7 +14,7 @@ struct TourRowView: View {
                     Rectangle()
                         .foregroundColor(Color.white.opacity(0.8))
                     HStack(alignment: .top){
-                        CirclePhotoLandmarkView(image: Image(landmark.header), frame: CGSize(width: 60, height: 60), radius: 20)
+                        CirclePhotoLandmarkView(image: Image(landmark.header.name), frame: CGSize(width: 60, height: 60), radius: 20)
                         
                     
                     VStack(alignment: .leading){
@@ -41,6 +41,6 @@ struct TourRowView: View {
 
 struct TourRowView_Previews: PreviewProvider {
     static var previews: some View {
-        TourRowView(landmark: LandmarkElement(title: "123", landmarkDescription: "", header: "", moreInformation: [MoreInformation(title: "lol", content: "lol")], coordinates: Coordinates(lat: 34.343, log: 233.34), moreInformationPhotos: [MoreInformationPhoto(name: "lol")]))
+        TourRowView(landmark: LandmarkElement(header: LandmarkHeader(name: "", copyright: ""), isTranslatedByGoogle: false, title: "123", landmarkDescription: "", moreInformation: [MoreInformation(title: "lol", content: "lol")], coordinates: Coordinates(lat: 34.343, log: 233.34), sources: [LandmarkSource(link: "")], moreInformationPhotos: [MoreInformationPhoto(name: "lol", copy: "")]))
     }
 }
