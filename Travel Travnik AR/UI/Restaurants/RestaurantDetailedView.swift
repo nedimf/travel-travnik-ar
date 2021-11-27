@@ -47,7 +47,7 @@ struct RestaurantDetailedView: View {
                        Text("About restaurant")
                            .font(.title2)
                        //Very risky, but this is only option we can do so far on this
-                       try! Text(AttributedString(markdown: restaurant.about))
+                       try! Text(AttributedString(markdown: restaurant.about,options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
                    }
                    .padding()
 
@@ -60,25 +60,33 @@ struct RestaurantDetailedView: View {
                     
                     if let mapWrapper = mapWrapper {
                         
-                        let m1 = MapLocationPoints(title: "1", locationName: "1", discipline: "1", image: UIImage(systemName: "mappin.and.ellipse"), coordinate: CLLocationCoordinate2D(latitude: restaurant.latitude, longitude: restaurant.longitude))
+                        let m1 = MapLocationPoints(title: restaurant.title, locationName: "1", discipline: "1", image: UIImage(systemName: "mappin.and.ellipse"), coordinate: CLLocationCoordinate2D(latitude: restaurant.latitude, longitude: restaurant.longitude))
                         
                         if let currentPlace = mapWrapper.currentPlace{
                             
                             let m2 = MapLocationPoints(title: "2", locationName: "2", discipline: "2", image: UIImage(systemName: "mappin.and.ellipse"), coordinate: currentPlace.coordinate)
                             
-                            
-                            let route = mapWrapper.setRouteOnMap(l1: m1, l2: m2, transportType: .walking)
-                            
-                            if let route = route {
+                            let userDefaults = UserDefaults()
+                            let isBetaEnabled = userDefaults.bool(forKey: "beta_step_by_step_direction")
+                            if(isBetaEnabled){
                                 
-                                for step in route.steps{
-                                    if (step.instructions != ""){
-                                        navigationSteps.append(step.instructions)
+                                let route = mapWrapper.setRouteOnMap(l1: m1, l2: m2, transportType: .automobile)
+                                
+                                if let route = route {
+                                    
+                                    for step in route.steps{
+                                        if (step.instructions != ""){
+                                            navigationSteps.append(step.instructions)
+                                        }
                                     }
-                                }
+                                    
+                                    openDirections = true
+                            }
                                 
-                                openDirections = true
-                        }
+                                
+                            }else{
+                                mapWrapper.openRouteInMaps(p1: m1, p2: m2, maps: .maps)
+                            }
                        
                       
                         }

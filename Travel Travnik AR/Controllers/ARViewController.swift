@@ -103,15 +103,16 @@ class ARViewController: UIViewController, ARSKViewDelegate {
         
         //Logic to show data from LandmarkElement as AR View
         let defaultSize = CGSize(width: 300, height: 500)
+        let randomColor = Color.random.opacity(0.75)
         if let landmark = landmark {
             //Header AR card/view
-            let header = generateCustomSKNodeView(swiftUI: LandmarkView(landmark: landmark), landmark: landmark, targetSize: defaultSize)
+            let header = generateCustomSKNodeView(swiftUI: LandmarkView(landmark: landmark, cardColor: randomColor), landmark: landmark, targetSize: defaultSize)
             if let header = header {landmarkCustomSkNodes.append(header)}
 
             //Body AR cards/views
             var i = 0
             for _ in landmark.moreInformation {
-                let info = generateCustomSKNodeView(swiftUI: LandmarkMoreInfoView(landmark: landmark, landmarkPosition: i, moreInformationType: .basic), landmark: landmark, targetSize: defaultSize)
+                let info = generateCustomSKNodeView(swiftUI: LandmarkMoreInfoView(landmark: landmark, landmarkPosition: i, cardColor: randomColor, moreInformationType: .basic), landmark: landmark, targetSize: defaultSize)
                 
                 if let info = info {
                     landmarkCustomSkNodes.append(info)
@@ -120,12 +121,15 @@ class ARViewController: UIViewController, ARSKViewDelegate {
             }
             
             // Image gallery AR card/views
-            let doubleGallery = generateCustomSKNodeView(swiftUI: LandmarkMoreInfoView(landmark: landmark, landmarkPosition: 0, moreInformationType: .photoDouble), landmark: landmark, targetSize: defaultSize)
+            let doubleGallery = generateCustomSKNodeView(swiftUI: LandmarkMoreInfoView(landmark: landmark, landmarkPosition: 0, cardColor: randomColor, moreInformationType: .photoDouble), landmark: landmark, targetSize: defaultSize)
             if let doubleGallery = doubleGallery {landmarkCustomSkNodes.append(doubleGallery)}
             
-            let photoGrid = generateCustomSKNodeView(swiftUI: LandmarkMoreInfoView(landmark: landmark, landmarkPosition: 0, moreInformationType: .photoGrid), landmark: landmark, targetSize: defaultSize)
-            if let photoGrid = photoGrid {
-                landmarkCustomSkNodes.append(photoGrid)
+            if (landmark.moreInformationPhotos.count > 5){
+                
+                let photoGrid = generateCustomSKNodeView(swiftUI: LandmarkMoreInfoView(landmark: landmark, landmarkPosition: 0, cardColor: randomColor, moreInformationType: .photoGrid), landmark: landmark, targetSize: defaultSize)
+                if let photoGrid = photoGrid {
+                    landmarkCustomSkNodes.append(photoGrid)
+                }
             }
             
             arScene.defaultSKNodes = landmarkCustomSkNodes

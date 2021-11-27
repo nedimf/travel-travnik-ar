@@ -34,7 +34,8 @@ struct RestaurantRowView: View {
               
                 HStack{
                     Text(restaurant.title)
-                        .font(.title)
+                        .font(.system(size: 20))
+                        .bold()
                 }.padding(.bottom, 5)
             
                 HStack {

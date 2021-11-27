@@ -15,53 +15,32 @@ extension MapWrapper: CLLocationManagerDelegate {
         _ manager: CLLocationManager,
         didChangeAuthorization status: CLAuthorizationStatus
     ) {
-        guard status == .authorizedWhenInUse else {
+        guard status == .authorizedAlways else {
             return
         }
         manager.requestLocation()
     }
-
-    //This checking enables app to have turn-to-turn navigation
-    //Checks on all locationRegions and matching coordinated with region geofencing
+    
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        self.isRegionEntered = true
- 
-            if stepRouterCounter < routeSteps.count{
-                let currentStep = routeSteps[stepRouterCounter]
-                let message = "In \(currentStep.distance.rounded()) meters in, \(currentStep.instructions)"
-
-                if let view = self.view {
-                    view.transparentView.isHidden = false
-                    view.topLabel.text = message
-                }
-
-                debugThis {
-                    print("MESSAGE")
-                    print(message)
-                }
-                stepRouterCounter += 1
-
-            }else{
-                let message = "Arrived!"
-                stepRouterCounter = 0
-                if let view = self.view {
-                    view.transparentView.isHidden = true
-                    view.topLabel.text = message
-                }
-            }
-       
+        
     }
-    
-    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        print("exit region")
-    }
-    
+
     func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
-        if let view = self.view {
-            view.transparentView.isHidden = false
-            view.transparentView.backgroundColor = .red.withAlphaComponent(0.3)
-            view.topLabel.text = "Failed to provide instructions!"
-        }
+        print("--- Monitoring did fail for region with identifier \(region?.identifier) with error: \(error)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didStartMonitoringFor region: CLRegion) {
+        print("--- Started monitoring for this region:: \(region)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        print("--- Heading: \(newHeading)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didDetermineState state: CLRegionState, for region: CLRegion) {
+        
+        print("DidDetermainState: \(region.identifier)")
+        print("DidDetermainState: \(state.rawValue)")
     }
     
     private func checkIfUserIsInLandmarkRadius(currentLocation: CLLocation, landmarks: Landmark) -> Bool{
@@ -77,14 +56,16 @@ extension MapWrapper: CLLocationManagerDelegate {
         return false
     }
     
-    private func checkIfUserIsInRouteStepRadius(currentLocation: CLLocation, steps: [MKRoute.Step]) -> Bool{
-        
+    private func checkIfUserIsInRouteStepRadius(currentLocation: CLLocation, steps: [CLCircularRegion]) -> (Bool, CLCircularRegion?){
         for step in steps{
-            if(currentLocation.distance(from: CLLocation(latitude: step.polyline.coordinate.latitude, longitude: step.polyline.coordinate.longitude)) < 20){
-                return true
+            let distance = currentLocation.distance(from: CLLocation(latitude: step.center.latitude, longitude: step.center.longitude))
+            if(distance < 20){
+                print("--- Distance: \(distance)")
+
+                return (true, step)
             }
         }
-        return false
+        return (false,nil)
     }
     
     // Continues check to see if user is in correct city
@@ -93,6 +74,7 @@ extension MapWrapper: CLLocationManagerDelegate {
         print("locations = \(locValue.latitude) \(locValue.longitude)")
         self.currentPlace = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
        
+        
         self.debugView?.text = "\(locValue.latitude) \(locValue.longitude)"
         self.debugCoordinatesArray.append("\(locValue.latitude) \(locValue.longitude)")
         print(self.evaluateClosestRouteSteps(steps: self.routeSteps))
@@ -119,17 +101,43 @@ extension MapWrapper: CLLocationManagerDelegate {
                 }
             }
 // TODO:// Worth checking
-//            if(self.checkIfUserIsInRouteStepRadius(currentLocation: self.currentPlace!, steps: self.routeSteps)){
-//                print(self.evaluateClosestRouteSteps(steps: self.routeSteps))
-//                let closestStep = self.evaluateClosestRouteSteps(steps: self.routeSteps).last!.0
+            let doCheck = self.checkIfUserIsInRouteStepRadius(currentLocation: self.currentPlace!, steps: self.routeRadiuses)
+            if(doCheck.0){
+                
+                
+                print("--- Radius closest \(doCheck.1)")
+                let index = Int((doCheck.1?.identifier.replacingOccurrences(of: "steps-", with: ""))!)
+                print("--- Step \(self.routeSteps[index!].instructions)")
+                
+                print(self.evaluateClosestRouteSteps(steps: self.routeSteps))
+                let closestStep = self.evaluateClosestRouteSteps(steps: self.routeSteps)[1].0
+
+                var message = ""
+                if self.instructionIndex == 0 {
+
+                    message = "In \(closestStep.distance.rounded()) meters in, \(closestStep.instructions)"
+                    if (!self.routeSteps[index!].instructions.lowercased().contains("arriv")){
+                        self.instructionIndex += 1
+                    }
+                }else{
+   
+                    if (self.routeSteps[index!].distance.rounded() > 1){
+                        message = "In \(self.routeSteps[index!].distance.rounded()) meters in, \(self.routeSteps[index!].instructions)"
+                    }else{
+                        message = "Arrived"
+                        self.instructionIndex = 0
+                    }
+                }
+                //let nextMessage = "In \(nextClosestStep.distance.rounded()) meters in, \(nextClosestStep.instructions)"
+
+                self.routeDirectionCurrentInstruction = message
+                self.routeDirectionImageRepresentation = message
+               //zr self.routeDirectionNextInstruction = nextMessage
 //
-//                let message = "In \(closestStep.distance.rounded()) meters in, \(closestStep.instructions)"
-//
-//                if let view = self.view {
-//                    view.transparentView.isHidden = false
-//                    view.topLabel.text = message
-//                }
-//            }
+                
+                print("\n ---- Message from checkIfUser \(message)")
+                print(self.evaluateClosestRouteSteps(steps: self.routeSteps))
+            }
         }
         
         
@@ -144,14 +152,7 @@ extension MapWrapper: CLLocationManagerDelegate {
                     print("Distance in city!")
                 }
             }else{
-                if let name = name {
-                    if let view = self.view{
-                        view.transparentView.isHidden = false
-                        view.transparentView.backgroundColor = .red.withAlphaComponent(0.3)
-                        view.topLabel.font = UIFont.systemFont(ofSize: 14)
-                        view.topLabel.text = "You are not in range: \(name), \(city)"
-                    }
-                }
+               //not in range
             }
             
         }
@@ -173,3 +174,6 @@ extension MapWrapper: CLLocationManagerDelegate {
     }
     
 }
+
+
+

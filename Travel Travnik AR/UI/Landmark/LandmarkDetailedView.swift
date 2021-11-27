@@ -11,6 +11,7 @@ struct LandmarkDetailedView: View {
     
     @State var landmark: LandmarkElement
     @State var isARButtonClicked = false
+    @State var isGalleryViewClicked = false
     @State private var contentForLandmark = ""
 
     var body: some View {
@@ -22,9 +23,13 @@ struct LandmarkDetailedView: View {
                        .ignoresSafeArea(edges: .top)
                        .frame(height: 300)
 
+
             CirclePhotoLandmarkView(image: Image(landmark.header.name))
                        .offset(y: -130)
                        .padding(.bottom, -130)
+                       .onTapGesture {
+                           isGalleryViewClicked = true
+                       }
 
                    VStack(alignment: .leading) {
                        Text(landmark.title)
@@ -34,7 +39,11 @@ struct LandmarkDetailedView: View {
                        HStack {
                            Text(landmark.landmarkDescription)
                            Spacer()
-                           Text("Travnik, BiH")
+                           if (landmark.isTranslatedByGoogle){
+                               Text("Translated by Google")
+                           }else{
+                               Text("Travnik, BiH")
+                           }
                        }
                        .font(.subheadline)
                        .foregroundColor(.secondary)
@@ -43,7 +52,7 @@ struct LandmarkDetailedView: View {
 
                        Text("About monument")
                            .font(.title2)
-                       Text(contentForLandmark)
+                       Text(contentForLandmark.replacingOccurrences(of: "\n", with: "\n\n"))
                    }
                    .padding()
 
@@ -66,6 +75,12 @@ struct LandmarkDetailedView: View {
         }, content: {
             ARView(landmark: landmark)
         })
+        
+        .sheet(isPresented: $isGalleryViewClicked, onDismiss: {
+        }, content: {
+            LandmarkGalleryView(landmark: landmark)
+        })
+        
         .navigationBarTitleDisplayMode(.automatic)
     }
 }

@@ -17,7 +17,7 @@ struct HomeHUDView: View {
     var body: some View {
         VStack{
             ZStack(alignment: .bottomLeading){
-                ScrollView(.horizontal) {
+                ScrollView(.horizontal, showsIndicators: false) {
                     HStack{
                         ZStack{
                             RoundedRectangle(cornerRadius: 25)
@@ -25,7 +25,10 @@ struct HomeHUDView: View {
                                 .frame(width: 200, height: 40)
                             HStack{
                                 Image(systemName: "figure.walk")
-                                Text("START A TOUR")
+                                Text("Start a Tour")
+                                    .foregroundColor(Color.black)
+                                    .bold()
+                                    
                             }
                         }.onTapGesture {
                             delegate?.hudClicked(id: 0, showParking: showParking)
@@ -37,7 +40,9 @@ struct HomeHUDView: View {
                                 .frame(width: 200, height: 40)
                             HStack{
                                 Image(systemName: "mappin.and.ellipse")
-                                Text("MONUMENTS")
+                                Text("Monuments")
+                                    .foregroundColor(Color.black)
+                                    .bold()
                             }
                         }.onTapGesture {
                             delegate?.hudClicked(id: 1, showParking: showParking)
@@ -52,9 +57,10 @@ struct HomeHUDView: View {
                                 Image("icons/restaurant")
                                     .resizable()
                                     .frame(width: 25, height: 25)
-                                Text("RESTAURANTS")
+                                Text("Restaurants")
+                                    .bold()
                                 
-                            }
+                            }.foregroundColor(Color.black)
                         }.onTapGesture {
                             delegate?.hudClicked(id: 2, showParking: showParking)
                         }
@@ -68,9 +74,11 @@ struct HomeHUDView: View {
                                 
                                 HStack{
                                     Image(systemName: "car")
-                                    Text("PARKING")
+                                    Text("Parking")
+                                        .foregroundColor(.black)
+                                        .bold()
                                     
-                                }.foregroundColor(.black)
+                                }
                                 
                             }else{
                                 RoundedRectangle(cornerRadius: 25)
@@ -79,7 +87,9 @@ struct HomeHUDView: View {
                                 
                                 HStack{
                                     Image(systemName: "car")
-                                    Text("PARKING")
+                                    Text("Parking")
+                                        .bold()
+                                        
                                 }.foregroundColor(.white)
                             }
                                 
@@ -89,14 +99,27 @@ struct HomeHUDView: View {
                             showParking.toggle()
                             delegate?.hudClicked(id: 3, showParking: showParking)
                         }
+                        
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 25)
+                                .fill(Color.white)
+                                .frame(width: 50, height: 40)
+                            HStack{
+                                Image(systemName: "wrench.and.screwdriver.fill")
+                            }
+                        }.onTapGesture {
+                            delegate?.hudClicked(id: 4, showParking: showParking)
+                        }
+                    }
+
                     }
                     .padding()
                     .foregroundColor(.black)
                     .font(.custom("Helvetica", size: 18))
                 }.frame(height: 70)
-            }
-
+                
         }.frame(height: 50)
+            
     }
 }
 
