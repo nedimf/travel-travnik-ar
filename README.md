@@ -1,10 +1,11 @@
 # travel-travnik-ar
 Travel Travnik AR is OS app to experience Travnik trough eyes of AR
 
-This app was bought by City of Travnik and they have chosen to open source it under MIT license 
-MIT License
+``This app was bought by City of Travnik and they have chosen to open source it under MIT license``
 
-Copyright (c) [2021] [Travel Travnik AR]
+###MIT License
+
+Copyright (c) 2021 Travel Travnik AR
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
