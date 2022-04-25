@@ -16,19 +16,21 @@ class HomeViewController: UIViewController{
     var mapLocationPoints = [MapLocationPoints]()
 
     
-    
+    var topNavigationView: UIHostingController<TopNavigationView>?=nil
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .red
         let donorView = HomeMainView()
-        donorView.headerView.transparentView.isHidden = true
-        donorView.headerView.transparentView.isUserInteractionEnabled = true
-        donorView.headerView.transparentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openListOfRouteInstructions)))
+        topNavigationView = donorView.topHeaderView
+        donorView.topHeaderView.view.isUserInteractionEnabled = true
+        donorView.topHeaderView.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openListOfRouteInstructions)))
         donorView.hudViewHC.rootView.delegate = self
         view = donorView
         
-        mapWrapper  = MapWrapper(mapView: donorView.mapView, locationManager: locationManger, view: donorView.headerView, didClickOnAccessoryMapView: { coordinates in
+        
+        mapWrapper  = MapWrapper(mapView: donorView.mapView, locationManager: locationManger, view: topNavigationView, didClickOnAccessoryMapView: { coordinates in
             print(coordinates)
         })
         
@@ -70,7 +72,7 @@ class HomeViewController: UIViewController{
                         steps.append("In \(step.distance.rounded()) meters, \(step.instructions)")
                     }
                 }
-                let listRouteHostVC = UIHostingController(rootView: RouteStepsListView(steps: steps))
+                let listRouteHostVC = UIHostingController(rootView: RouteStepsListView(steps: steps, mapWrapper: mapWrapper, topNavigationView: topNavigationView))
                 let scene = UIApplication.shared.connectedScenes.first
                 if let sd : SceneDelegate = (scene?.delegate as? SceneDelegate) {
                     sd.nc.pushViewController(listRouteHostVC, animated: true)
@@ -104,6 +106,7 @@ extension HomeViewController: HUDClickedDelegate{
         let landmarksHostVC = UIHostingController(rootView: LandmarkHostView())
         let restaurantHostVC = UIHostingController(rootView: RestaurantHostView(mapWrapper: mapWrapper))
         let startTourVC = TourViewController()
+        let settingsVC = UIHostingController(rootView: SettingView())
         
         let scene = UIApplication.shared.connectedScenes.first
         switch(id){
@@ -131,9 +134,23 @@ extension HomeViewController: HUDClickedDelegate{
                     mapWrapper.setMapPoints(for: mapLocationPoints, with: .includingAll, settingView: LocationPointView.self)
                 }
             }
+        case 4:
+            if let sd : SceneDelegate = (scene?.delegate as? SceneDelegate) {
+                //locationManager.stopUpdatingLocation()
+                sd.nc.pushViewController(settingsVC, animated: true)
+            }
         default:
             print("unexpected choice")
         }
 
     }
+}
+
+//Notifications to connect with SwiftUI and change view accordingly
+extension Notification.Name {
+    static var routeDirectionImageRepresentation: Notification.Name{return .init(rawValue: "routeDirectionImageRepresentation")}
+    static var routeDirectionCurrentInstruction: Notification.Name{return .init(rawValue: "routeDirectionCurrentInstruction")}
+    static var routeDirectionNextInstruction: Notification.Name{return .init(rawValue: "routeDirectionNextInstruction")}
+    static var showTopNotificationView: Notification.Name{return .init(rawValue: "showTopNotificationView")}
+
 }

@@ -52,4 +52,8 @@ struct MoreInformationPhoto: Codable {
     let copy: String
 }
 
+extension MoreInformationPhoto: Hashable{
+    
+}
+
 typealias Landmark = [LandmarkElement]

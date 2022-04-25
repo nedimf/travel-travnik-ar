@@ -16,6 +16,7 @@ enum MoreInformationType {
 struct LandmarkMoreInfoView: View {
     @State var landmark: LandmarkElement
     var landmarkPosition = 0
+    @State var cardColor: Color
     @State var moreInformationType:MoreInformationType = .basic
     
     var body: some View {
@@ -23,8 +24,7 @@ struct LandmarkMoreInfoView: View {
         
             //TODO:: change color to be more randomised
             Rectangle()
-                .fill(Color.green.opacity(0.75))
-                .ignoresSafeArea(edges: .top)
+                .fill(cardColor)
                 .frame(height: 150)
             
             VStack(alignment: .leading) {
@@ -131,6 +131,6 @@ struct LandmarkMoreInfoView: View {
 
 struct LandmarkMoreInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkMoreInfoView(landmark: LandmarkElement(header: LandmarkHeader(name: "", copyright: ""), isTranslatedByGoogle: false, title: "123", landmarkDescription: "", moreInformation: [MoreInformation(title: "lol", content: "lol")], coordinates: Coordinates(lat: 34.343, log: 233.34), sources: [LandmarkSource(link: "")], moreInformationPhotos: [MoreInformationPhoto(name: "lol", copy: "")]))
+        LandmarkMoreInfoView(landmark: LandmarkElement(header: LandmarkHeader(name: "", copyright: ""), isTranslatedByGoogle: false, title: "123", landmarkDescription: "", moreInformation: [MoreInformation(title: "lol", content: "lol")], coordinates: Coordinates(lat: 34.343, log: 233.34), sources: [LandmarkSource(link: "")], moreInformationPhotos: [MoreInformationPhoto(name: "lol", copy: "")]), cardColor: .green)
     }
 }

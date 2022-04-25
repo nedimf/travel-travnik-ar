@@ -39,24 +39,24 @@ class TourViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mapWrapper  = MapWrapper(mapView: mapView, locationManager: locationManger, view: self.headerView, didClickOnAccessoryMapView: { coordinates in
-            print(coordinates)
-        })
-        
-        let landmarks = Bundle.main.decode(Landmark.self, from: "landmarks.json")
-
-        DispatchQueue.main.async {
-            
-            for landmark in landmarks{
-                self.mapLocationPoints.append(MapLocationPoints(title: landmark.title, locationName: landmark.landmarkDescription, discipline: "sculpture", image: UIImage(named: landmark.header.name)?.circleImage(20, size: CGSize(width: 60, height: 60)), coordinate: CLLocationCoordinate2D(latitude: landmark.coordinates.lat, longitude: landmark.coordinates.log)))
-            }
-            
-            if let mapWrapper = self.mapWrapper {
-                mapWrapper.setMapPoints(for: self.mapLocationPoints, with: .includingAll, settingView: LocationPointView.self)
-                mapWrapper.mapLandmarks = landmarks
-            }
-                       
-        }
+//        mapWrapper  = MapWrapper(mapView: mapView, locationManager: locationManger, view: self.headerView, didClickOnAccessoryMapView: { coordinates in
+//            print(coordinates)
+//        })
+//        
+//        let landmarks = Bundle.main.decode(Landmark.self, from: "landmarks.json")
+//
+//        DispatchQueue.main.async {
+//            
+//            for landmark in landmarks{
+//                self.mapLocationPoints.append(MapLocationPoints(title: landmark.title, locationName: landmark.landmarkDescription, discipline: "sculpture", image: UIImage(named: landmark.header.name)?.circleImage(20, size: CGSize(width: 60, height: 60)), coordinate: CLLocationCoordinate2D(latitude: landmark.coordinates.lat, longitude: landmark.coordinates.log)))
+//            }
+//            
+//            if let mapWrapper = self.mapWrapper {
+//                mapWrapper.setMapPoints(for: self.mapLocationPoints, with: .includingAll, settingView: LocationPointView.self)
+//                mapWrapper.mapLandmarks = landmarks
+//            }
+//                       
+//        }
         
        
     

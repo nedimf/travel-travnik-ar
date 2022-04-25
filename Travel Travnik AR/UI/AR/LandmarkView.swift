@@ -8,10 +8,11 @@ import SwiftUI
 
 struct LandmarkView: View {
     @State var landmark: LandmarkElement
+    @State var cardColor: Color
     var body: some View {
         VStack{
             Rectangle()
-                .fill(Color.green.opacity(0.75))
+                .fill(cardColor)
                 .ignoresSafeArea(edges: .top)
                 .frame(height: 300)
             
@@ -51,6 +52,6 @@ struct LandmarkView: View {
 
 struct LandmarkView_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkView(landmark: LandmarkElement(header: LandmarkHeader(name: "", copyright: ""), isTranslatedByGoogle: false, title: "123", landmarkDescription: "", moreInformation: [MoreInformation(title: "lol", content: "lol")], coordinates: Coordinates(lat: 34.343, log: 233.34), sources: [LandmarkSource(link: "")], moreInformationPhotos: [MoreInformationPhoto(name: "lol", copy: "")]))
+        LandmarkView(landmark: LandmarkElement(header: LandmarkHeader(name: "", copyright: ""), isTranslatedByGoogle: false, title: "123", landmarkDescription: "", moreInformation: [MoreInformation(title: "lol", content: "lol")], coordinates: Coordinates(lat: 34.343, log: 233.34), sources: [LandmarkSource(link: "")], moreInformationPhotos: [MoreInformationPhoto(name: "lol", copy: "")]), cardColor: .green)
     }
 }

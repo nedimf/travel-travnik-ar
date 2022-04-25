@@ -2,6 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>instagram</string>
+		<string>fb</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -19,22 +24,11 @@
 			</array>
 		</dict>
 	</dict>
-    <key>NSCameraUsageDescription</key>
-    <string>This application will use the camera for Augmented Reality.</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Needs Location when in use</string>
-    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    <string>Needs Location when in use</string>
-    <key>NSMotionUsageDescription</key>
-    <string>Needs motion to detect if user is driving</string>
-    <key>NSPhotoLibraryAddUsageDescription</key>
-    <string>Well..we need it</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>Well it is what it </string>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>instagram</string>
-        <string>fb</string>
-    </array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>location</string>
+		<string>processing</string>
+	</array>
 </dict>
 </plist>

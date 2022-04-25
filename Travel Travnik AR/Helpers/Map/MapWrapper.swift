@@ -18,7 +18,7 @@ class MapWrapper: NSObject{
     var calculatedRoute: MKRoute?
     var didClickOnAccessoryMapView: (CLLocationCoordinate2D) -> Void?
     var mapWrapperDelegate: MKMapViewDelegate?
-    var view: TopMapHeaderView?
+    var view:UIHostingController<TopNavigationView>?
     var debugView: UILabel?=nil
     
     var currentPlace: CLLocation?
@@ -28,12 +28,43 @@ class MapWrapper: NSObject{
     var stepRouterCounter = 0
     var isRegionEntered = false
     var mapLandmarks = Landmark()
+    var routeRadiuses = [CLCircularRegion]()
+    var instructionIndex = 0
+
+    var routeDirectionImageRepresentation: String = ""{
+        didSet{
+            let dataInfo: [String: String] = ["imageRepresentation": self.routeDirectionImageRepresentation]
+            NotificationCenter.default.post(name: .routeDirectionImageRepresentation, object: dataInfo)
+        }
+    }
+    
+    var routeDirectionCurrentInstruction: String = ""{
+        didSet{
+            let dataInfo: [String: String] = ["currentInstruction": self.routeDirectionCurrentInstruction]
+            NotificationCenter.default.post(name: .routeDirectionCurrentInstruction, object: dataInfo)
+        }
+    }
+    
+    var showTopNavigationView = false{
+        didSet{
+            let dataInfo = self.showTopNavigationView
+            NotificationCenter.default.post(name: .showTopNotificationView, object: dataInfo)
+        }
+    }
+    
+    var routeDirectionNextInstruction: String = ""{
+        didSet{
+            let dataInfo: [String: String] = ["nextInstruction": self.routeDirectionNextInstruction]
+            NotificationCenter.default.post(name: .routeDirectionCurrentInstruction, object: dataInfo)
+        }
+    }
+    
 
 
     
     // Setting up region and showing it on Map View
     // Enable location to check for current coordinates
-    init(mapView: MKMapView, locationManager: CLLocationManager,view: TopMapHeaderView?, debugView: UILabel?=nil,didClickOnAccessoryMapView: @escaping (CLLocationCoordinate2D) -> Void?) {
+    init(mapView: MKMapView, locationManager: CLLocationManager,view: UIHostingController<TopNavigationView>?, debugView: UILabel?=nil,didClickOnAccessoryMapView: @escaping (CLLocationCoordinate2D) -> Void?) {
         self.mapView =  mapView
         self.locationManager = locationManager
         self.view  = view
@@ -56,8 +87,12 @@ class MapWrapper: NSObject{
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+            locationManager.allowsBackgroundLocationUpdates = true
+            locationManager.distanceFilter = 1
             locationManager.startUpdatingLocation()
+            locationManager.startUpdatingHeading()
         }
+        
         
         mapView.setCameraBoundary(MKMapView.CameraBoundary(coordinateRegion: region), animated: true)
         
@@ -122,6 +157,10 @@ class MapWrapper: NSObject{
                     if let response = response{
                         if let primaryRoute = response.routes.first {
                             
+                            for region in self.locationManager.monitoredRegions{
+                                self.locationManager.stopMonitoring(for: region)
+                            }
+                            
                             for i in 0..<primaryRoute.steps.count{
                                 let step = primaryRoute.steps[i]
                                 
@@ -132,22 +171,26 @@ class MapWrapper: NSObject{
                                 }
                                 
                                 let region = CLCircularRegion(center: step.polyline.coordinate,
-                                                              radius: 10,
+                                                              radius: 20,
                                                               identifier: "steps-\(i)")
-                                self.locationManager.startMonitoring(for: region)
                                 let circle = MKCircle(center: region.center, radius: region.radius)
                                 self.mapView.addOverlay(circle)
                                 locationManager.requestState(for: region)
+                                locationManager.startMonitoring(for: region)
                                 
+                                region.notifyOnEntry = true
+                                routeRadiuses.append(region)
+                                
+                                self.showTopNavigationView = true
                                 
                             }
                             self.stepRouterCounter += 1
                             let message = "In \(self.routeSteps[stepRouterCounter].distance) meters in, \(self.routeSteps[stepRouterCounter].instructions)"
-                            if let view = self.view {
-                                view.transparentView.isHidden = false
-                                view.transparentView.backgroundColor = .gray.withAlphaComponent(0.3)
-                                view.topLabel.text = message
-                            }
+                            
+                            self.routeDirectionCurrentInstruction = message
+                            self.routeDirectionImageRepresentation = message
+                            
+                        
                             
                         }
                     }
@@ -216,6 +259,29 @@ class MapWrapper: NSObject{
         return annotation
     }
     
+    //Clear mapView
+    func clearMapViewFromDrawnRoute(){
+        self.mapView.removeOverlays(self.mapView.overlays)
+    }
+    
+    //Open Route in Apple/Google Maps
+    enum TypeOfSupportedMaps {
+        case google
+        case maps
+    }
+
+    func openRouteInMaps(p1: MapLocationPoints, p2: MapLocationPoints, maps: TypeOfSupportedMaps){
+        switch maps {
+        case .google:
+            let url = URL(string: "comgooglemaps://?daddr=\(p1.coordinate.latitude),\(p1.coordinate.longitude)+\(p2.coordinate.latitude),\(p2.coordinate.longitude)&directionsmode=driving&zoom=14&views=traffic")!
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        case .maps:
+            let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: p1.coordinate, addressDictionary: nil))
+            mapItem.name = p1.title
+            mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
+        }
+    }
+    
 }
 
 extension MapWrapper: MKMapViewDelegate{
@@ -228,7 +294,7 @@ extension MapWrapper: MKMapViewDelegate{
        if (overlay is MKCircle){
             let renderer = MKCircleRenderer(overlay: overlay)
             renderer.fillColor = .white.withAlphaComponent(0.0)
-           renderer.strokeColor = .red.withAlphaComponent(1)
+           renderer.strokeColor = .red.withAlphaComponent(0.0)
             renderer.lineWidth = 2
             
             return renderer
@@ -247,12 +313,20 @@ extension MapWrapper: MKMapViewDelegate{
         if let annotation = view.annotation {
             self.didClickOnAccessoryMapView(annotation.coordinate)
             
-            let a = MapLocationPoints(title: "point", locationName: nil, discipline: nil, image: UIImage(systemName: "mappin"), coordinate: annotation.coordinate)
-            let b = MapLocationPoints(title: "point", locationName: nil, discipline: nil, image: UIImage(systemName: "mappin"), coordinate: currentPlace!.coordinate)
+            let a = MapLocationPoints(title: annotation.title!, locationName: nil, discipline: nil, image: UIImage(systemName: "mappin"), coordinate: annotation.coordinate)
+            let b = MapLocationPoints(title: "Current location", locationName: nil, discipline: nil, image: UIImage(systemName: "mappin"), coordinate: currentPlace!.coordinate)
             
-            let route = setRouteOnMap(l1: a, l2: b, transportType: MKDirectionsTransportType.automobile)
-            
-            print(route)
+            let userDefaults = UserDefaults()
+            let isBetaEnabled = userDefaults.bool(forKey: "beta_step_by_step_direction")
+            if(isBetaEnabled){
+                let route = setRouteOnMap(l1: a, l2: b, transportType: MKDirectionsTransportType.automobile)
+                print(route)
+                NotificationCenter.default.post(name: .showTopNotificationView, object: true)
+                self.view?.view.isUserInteractionEnabled = true
+            }else{
+                openRouteInMaps(p1: a, p2: b, maps: .maps)
+            }
+
         }
     }
 }

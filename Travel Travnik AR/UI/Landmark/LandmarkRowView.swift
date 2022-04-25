@@ -28,7 +28,8 @@ struct LandmarkRowView: View {
             VStack(alignment: .leading) {
                 HStack{
                     Text(landmark.title)
-                        .font(.title)
+                        .font(.system(size: 20))
+                        .bold()
                     Spacer()
                     Image(systemName: "cube.transparent")
                         
